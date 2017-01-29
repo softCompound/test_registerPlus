@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">RegisterPlus</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="reg_address">Address</string>
+    <string name="reg_name">Name</string>
+    <string name="reg_get_token_button">Get Token</string>
+    <string name="reg_name_hint">Please enter your full name.</string>
+    <string name="reg_address_hint">Please enter your Address</string>
+    <string name="drawerlayou_about_us">About Us</string>
+</resources>

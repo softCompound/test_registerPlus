@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "256730864634",
+    "firebase_url": "https://registerplus-4e0c8.firebaseio.com",
+    "project_id": "registerplus-4e0c8",
+    "storage_bucket": "registerplus-4e0c8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:256730864634:android:98adf77abf6e6920",
+        "android_client_info": {
+          "package_name": "primecode.registerplus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "256730864634-hdchg3hgo1hm8mcii9b39ok3d4dbojg8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "primecode.registerplus",
+            "certificate_hash": "BD30054079CE46CD97AC8960F6C6582051BDB66E"
+          }
+        },
+        {
+          "client_id": "256730864634-rq8ktdv6op2jbmocclainsk6p6oladcr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAB3Gk_3odgsJMXCrlG5Kw3_DtDvBGRkks"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "256730864634-rq8ktdv6op2jbmocclainsk6p6oladcr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
