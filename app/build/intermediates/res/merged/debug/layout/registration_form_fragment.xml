@@ -10,9 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <Space
-        android:layout_width="1dp"
-        android:layout_height="@dimen/form_space_light"/>
 
     <EditText
         android:id="@+id/editTextName"
@@ -24,11 +21,9 @@
         android:inputType="text|textNoSuggestions"
         android:textCursorDrawable="@drawable/cursor_color"
         android:background="@drawable/border_shape"
-        />
+        android:layout_marginTop="@dimen/form_space_light"
+        android:layout_marginBottom="@dimen/form_space_medium" />
 
-    <Space
-        android:layout_width="1dp"
-        android:layout_height="@dimen/form_space_medium"/>
 
 
     <TextView
@@ -38,9 +33,7 @@
         android:layout_height="wrap_content"
         />
 
-    <Space
-        android:layout_width="1dp"
-        android:layout_height="@dimen/form_space_light"/>
+
 
     <EditText
         android:id="@+id/editTextAddress"
@@ -52,18 +45,32 @@
         android:inputType="text|textNoSuggestions"
         android:padding="10dp"
         android:textCursorDrawable="@drawable/cursor_color"
+        android:layout_marginTop="@dimen/form_space_light"
+        android:layout_marginBottom="@dimen/form_space_medium" />
+
+    <TextView
+        android:id="@+id/reg_spinner"
+        android:text="@string/reg_nature_of_inquiry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:labelFor="@id/reg_spinner"
+        android:background="@drawable/border_shape"
+        android:layout_marginTop="@dimen/form_space_light"
+        android:layout_marginBottom="@dimen/form_space_medium"
         />
 
-    <Space
-        android:layout_width="1dp"
-        android:layout_height="@dimen/form_space_heavy"/>
 
     <Button
         android:id="@+id/button_get_token"
         android:text="@string/reg_get_token_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_details"/>
+        android:background="@drawable/button_details"
+        android:layout_marginTop="@dimen/form_space_heavy" />
 
 
 </LinearLayout>

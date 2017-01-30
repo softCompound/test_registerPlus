@@ -19,4 +19,16 @@
         \nVersion 1.0 (Jan 2016)\n
         Copyrights (&#169;) primeCode.net\n
     </string>
+    <string name="reg_nature_of_inquiry">Nature of Inquiry</string>
+
+    <string-array name="inqury_nature_array">
+        <item>Flu</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+    </string-array>
 </resources>

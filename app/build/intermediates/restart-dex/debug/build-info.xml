@@ -5,40 +5,33 @@
     density="xxhdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="15760739907560"
+    timestamp="31285493680987"
     token="-8312388618017193898"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="238" />
+        duration="1356" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="48" />
+        duration="452" />
     <task
         name="verifier"
-        duration="10" />
+        duration="252" />
 
     <artifact
-        location="/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"
-        type="DEX" />
+        location="/Users/nagendralimbu/Desktop/RegisterPlus/app/build/outputs/apk/app-debug.apk"
+        type="MAIN" />
 
     <build
-        timestamp="12109301984636"
+        timestamp="31285493680987"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/Users/nagendralimbu/Desktop/RegisterPlus/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
-    </build>
-    <build
-        timestamp="15760739907560"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"
-            type="DEX" />
     </build>
 
 </instant-run>

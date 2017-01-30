@@ -2,5 +2,9 @@
     {
         "merged": "/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/merged/debug/drawable-hdpi/app_icon.png",
         "source": "/Users/nagendralimbu/Desktop/RegisterPlus/app/src/main/res/drawable-hdpi/app_icon.png"
+    },
+    {
+        "merged": "/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/merged/debug/drawable-hdpi/appico_revised.png",
+        "source": "/Users/nagendralimbu/Desktop/RegisterPlus/app/src/main/res/drawable-hdpi/appico_revised.png"
     }
 ]

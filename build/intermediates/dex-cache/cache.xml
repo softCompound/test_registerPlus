@@ -70,8 +70,8 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.0"
-        sha1="94d7197c47ee03b98f429ec7c646b189abb20bd3">
-        <dex dex="/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_c67854f53320a4380e71f6a4a963b4effeacd05e/classes.dex" />
+        sha1="a1687fe1ea2cf929db31dfb82864c7d8098b6d21">
+        <dex dex="/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_c61b716bc7ed609f5bbb865bcfd6b3ec82b7dc16/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -133,8 +133,8 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.0"
-        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
-        <dex dex="/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-iid-10.0.1_977ab2691ef1cecc2398f971f4b3a6e9bd4a91b0/classes.dex" />
+        sha1="b38c7e06ee35470c88a47e85d429fa4c7373e403">
+        <dex dex="/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_c67854f53320a4380e71f6a4a963b4effeacd05e/classes.dex" />
     </item>
     <item
         is-multidex="true"

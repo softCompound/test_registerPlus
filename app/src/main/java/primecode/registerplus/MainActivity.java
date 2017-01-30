@@ -80,7 +80,10 @@ public class MainActivity extends AppCompatActivity
                 //String s = fragment.getClass().getName();
                //Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
                 replaceFragments(fragment, false);
+            } else {
+                replaceFragments(new RegistrationFragment(), true);
             }
+
 
         } else if (id == R.id.myTokens) {
             //start a new Activity here.
@@ -90,9 +93,13 @@ public class MainActivity extends AppCompatActivity
                 getSupportFragmentManager().beginTransaction().add(fragment, "myTokens").commit();
                 replaceFragments(fragment, false);
             }else {
+                boolean addToBackStack = true;
                 //create new aboutUs Fragment
                 Fragment myToken = new MyTokensFragment();
-                replaceFragments(myToken, true);
+                if(getSupportFragmentManager().findFragmentById(R.id.fragment_container1) instanceof AboutUsFragment) {
+                    addToBackStack = false;
+                }
+                replaceFragments(myToken, addToBackStack);
             }
 
         } else if (id == R.id.aboutUs) {
@@ -102,9 +109,14 @@ public class MainActivity extends AppCompatActivity
                 getSupportFragmentManager().beginTransaction().add(fragment, "aboutUs").commit();
                 replaceFragments(fragment, false);
             }else {
+                boolean addToBackStack = true;
                 //create new aboutUs Fragment
                 Fragment aboutUs = new AboutUsFragment();
-                replaceFragments(aboutUs, true);
+                //create new aboutUs Fragment
+                if(getSupportFragmentManager().findFragmentById(R.id.fragment_container1) instanceof MyTokensFragment) {
+                    addToBackStack = false;
+                }
+                replaceFragments(aboutUs, addToBackStack);
             }
 
 
@@ -115,15 +127,17 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    /**
-     *
-     */
     public void replaceFragments(Fragment fragment, boolean addToBackStack) {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.fragment_container1, fragment)
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
 
-        if(addToBackStack) ft.addToBackStack(fragment.getTag());
+        if(addToBackStack) {
+            ft.addToBackStack(fragment.getTag());
+        } else {
+            getSupportFragmentManager().popBackStack();
+        }
+
 
         ft.commit();
     }
