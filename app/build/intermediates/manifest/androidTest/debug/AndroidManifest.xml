@@ -3,7 +3,7 @@
     package="primecode.registerplus.test" >
 
     <uses-sdk
-        android:minSdkVersion="15"
+        android:minSdkVersion="9"
         android:targetSdkVersion="24" />
 
     <instrumentation

@@ -70,7 +70,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.0"
-        sha1="0f05d648cdd3926113b7f21f191d646afeedef7e">
+        sha1="bc5f5d5f2b9e65530e6648b8f62bc6cd7c936ff4">
         <dex dex="/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_c61b716bc7ed609f5bbb865bcfd6b3ec82b7dc16/classes.dex" />
     </item>
     <item
@@ -133,7 +133,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.0"
-        sha1="fd4d4c792f89a7214232ec48dcaab557a10610a0">
+        sha1="476e8479ba11f07d95497df22e18e9f701f90e1f">
         <dex dex="/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_c67854f53320a4380e71f6a4a963b4effeacd05e/classes.dex" />
     </item>
     <item

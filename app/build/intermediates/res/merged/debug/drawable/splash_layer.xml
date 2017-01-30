@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:opacity="opaque">
     <!--opacity attribute removes the black screen at startup
-    Layer-list places items on top of each other-->
+    Layer-list places items with the biggest index on top-->
 
     <item
         android:drawable="@color/colorGreen"/>
@@ -11,7 +11,7 @@
     <item>
         <bitmap
             android:gravity="center"
-            android:src="@drawable/app_icon"/>
+            android:src="@drawable/appico_revised"/>
     </item>
 
 </layer-list>
