@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="25dp">
+
+    <TextView
+        android:id="@+id/reg_name"
+        android:text="@string/reg_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/reg_name"
+        android:padding="10dp"
+        android:hint="@string/reg_name_hint"
+        android:inputType="text|textNoSuggestions"
+        android:textCursorDrawable="@drawable/cursor_color"
+        android:background="@drawable/border_shape"
+        android:layout_marginTop="@dimen/form_space_light"
+        android:layout_marginBottom="@dimen/form_space_medium" />
+
+
+
+    <TextView
+        android:id="@+id/reg_address"
+        android:text="@string/reg_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+
+
+    <EditText
+        android:id="@+id/editTextAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/reg_address"
+        android:hint="@string/reg_address_hint"
+        android:background="@drawable/border_shape"
+        android:inputType="text|textNoSuggestions"
+        android:padding="10dp"
+        android:textCursorDrawable="@drawable/cursor_color"
+        android:layout_marginTop="@dimen/form_space_light"
+        android:layout_marginBottom="@dimen/form_space_medium" />
+
+    <TextView
+        android:id="@+id/reg_spinner"
+        android:text="@string/reg_nature_of_inquiry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:labelFor="@id/reg_spinner"
+        android:background="@drawable/border_shape"
+        android:layout_marginTop="@dimen/form_space_light"
+        android:layout_marginBottom="@dimen/form_space_medium"
+        />
+
+
+    <Button
+        android:id="@+id/button_get_token"
+        android:text="@string/reg_get_token_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_details"
+        android:layout_marginTop="@dimen/form_space_heavy" />
+
+
+</LinearLayout>
