@@ -11,10 +11,31 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
-    private static final String TAG = "MyActivity";
+
+        implements NavigationView.OnNavigationItemSelectedListener,
+        FragmentButtonClick {
+
+
+    @Override
+    public void fragmentButtonClicked() {
+        EditText fullname = (EditText) findViewById(R.id.editTextName);
+        EditText address = (EditText) findViewById(R.id.editTextAddress);
+
+        Spinner spinner = (Spinner) findViewById(R.id.reg_spinner);
+        if (spinner.getSelectedItem().toString().trim().equals("Select from the list") ||
+                (fullname.getText().toString().trim().length() < 1 ||
+                        address.getText().toString().trim().length() < 1) ) {
+            Toast.makeText(this, "Please Complete the Form.", Toast.LENGTH_SHORT).show();
+        } else {
+            //validation completed | create new Activity | populate the database
+        }
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +99,7 @@ public class MainActivity extends AppCompatActivity
             Fragment fragment = getSupportFragmentManager().findFragmentByTag("home");
             if(fragment != null) {
                 //String s = fragment.getClass().getName();
-               //Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
                 replaceFragments(fragment, false);
             } else {
                 replaceFragments(new RegistrationFragment(), true);

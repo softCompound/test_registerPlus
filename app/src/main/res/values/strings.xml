@@ -17,18 +17,16 @@
     <string name="aboutUsText">
         \n RegisterPlus app records arrival of the patients in the hospital. \n
         \nVersion 1.0 (Jan 2016)\n
-        Copyrights (&#169;) primeCode.net\n
+        Copyrights &#169; primeCode.net\n
     </string>
     <string name="reg_nature_of_inquiry">Nature of Inquiry</string>
 
     <string-array name="inqury_nature_array">
-        <item>Flu</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Jupiter</item>
-        <item>Saturn</item>
-        <item>Uranus</item>
-        <item>Neptune</item>
+
+        <item>Select from the list</item>
+        <item>General Enquiry</item>
+        <item>Registration</item>
+        <item>Book Appointment</item>
+        <item>Submit Samples</item>
     </string-array>
 </resources>

@@ -2609,7 +2609,7 @@ containing a value of this type.
         public static final int splash_layer=0x7f020063;
     }
     public static final class id {
-        public static final int aboutUs=0x7f0d0091;
+        public static final int aboutUs=0x7f0d0092;
         public static final int action0=0x7f0d007d;
         public static final int action_bar=0x7f0d005f;
         public static final int action_bar_activity_content=0x7f0d0000;
@@ -2625,7 +2625,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f0d005c;
         public static final int action_mode_bar_stub=0x7f0d005b;
         public static final int action_mode_close_button=0x7f0d0040;
-        public static final int action_settings=0x7f0d0092;
+        public static final int action_settings=0x7f0d0093;
         public static final int activity_chooser_view_content=0x7f0d0041;
         public static final int add=0x7f0d001b;
         public static final int alertTitle=0x7f0d004d;
@@ -2635,7 +2635,7 @@ containing a value of this type.
         public static final int beginning=0x7f0d0035;
         public static final int bottom=0x7f0d0023;
         public static final int buttonPanel=0x7f0d0048;
-        public static final int button_get_token=0x7f0d008f;
+        public static final int button_get_token=0x7f0d0090;
         public static final int cancel_action=0x7f0d007e;
         public static final int center=0x7f0d0024;
         public static final int center_horizontal=0x7f0d0025;
@@ -2690,7 +2690,7 @@ containing a value of this type.
         public static final int middle=0x7f0d0036;
         public static final int mini=0x7f0d0034;
         public static final int multiply=0x7f0d001c;
-        public static final int myTokens=0x7f0d0090;
+        public static final int myTokens=0x7f0d0091;
         public static final int nav_view=0x7f0d006f;
         public static final int navigation_header_container=0x7f0d0076;
         public static final int never=0x7f0d003a;
@@ -2704,7 +2704,7 @@ containing a value of this type.
         public static final int radio=0x7f0d0058;
         public static final int reg_address=0x7f0d008c;
         public static final int reg_name=0x7f0d008a;
-        public static final int reg_spinner=0x7f0d008e;
+        public static final int reg_spinner=0x7f0d008f;
         public static final int right=0x7f0d002a;
         public static final int screen=0x7f0d001d;
         public static final int scroll=0x7f0d0019;
@@ -2744,6 +2744,7 @@ containing a value of this type.
         public static final int text2=0x7f0d0085;
         public static final int textSpacerNoButtons=0x7f0d0051;
         public static final int text_input_password_toggle=0x7f0d007b;
+        public static final int text_spinner=0x7f0d008e;
         public static final int time=0x7f0d0083;
         public static final int title=0x7f0d0047;
         public static final int title_template=0x7f0d004c;

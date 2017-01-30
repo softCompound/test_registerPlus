@@ -49,16 +49,19 @@
         android:layout_marginBottom="@dimen/form_space_medium" />
 
     <TextView
-        android:id="@+id/reg_spinner"
+        android:id="@+id/text_spinner"
         android:text="@string/reg_nature_of_inquiry"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
+
     <Spinner
+        android:id="@+id/reg_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="10dp"
         android:labelFor="@id/reg_spinner"
-        android:background="@drawable/border_shape"
+        android:background="@android:drawable/btn_dropdown"
         android:layout_marginTop="@dimen/form_space_light"
         android:layout_marginBottom="@dimen/form_space_medium"
         />

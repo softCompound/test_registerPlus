@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Jan 30 12:27:24 GMT 2017
+#Mon Jan 30 15:05:46 GMT 2017
 210.set=ANDROID_RESOURCE
 282.file=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/resources-debug.ap_/res/drawable-xxhdpi-v4/abc_btn_check_to_on_mtrl_000.png
 14.set=ANDROID_RESOURCE
@@ -14,7 +14,7 @@
 21.set=ANDROID_RESOURCE
 53.file=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/resources-debug.ap_/res/layout/notification_template_big_media.xml
 107.base=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/resources-debug.ap_
-236.base=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_8
+236.base=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/resources-debug.ap_
 159.base=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/resources-debug.ap_
 125.set=ANDROID_RESOURCE
 288.base=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/resources-debug.ap_
@@ -48,7 +48,7 @@
 244.file=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/resources-debug.ap_/res/anim/abc_slide_in_bottom.xml
 167.file=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/resources-debug.ap_/res/drawable-xxhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png
 275.base=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/resources-debug.ap_
-198.base=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1
+198.base=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/resources-debug.ap_
 121.base=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/resources-debug.ap_
 142.file=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_a022647d55143ffa916351bf7450a207a09a96e9/classes.dex
 250.base=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/resources-debug.ap_
@@ -173,7 +173,7 @@
 213.base=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/resources-debug.ap_
 82.file=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_0fb1a8e88cbe4de0c166842b817872ddb4abb3d3/classes.dex
 136.base=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/resources-debug.ap_
-265.base=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_37d708f4a323291532e9582d8ce16c3a1ca9e40d
+265.base=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/resources-debug.ap_
 188.base=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/resources-debug.ap_
 111.base=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/resources-debug.ap_
 240.base=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/resources-debug.ap_
@@ -214,7 +214,7 @@
 76.set=ANDROID_RESOURCE
 48.base=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/resources-debug.ap_
 233.set=ANDROID_RESOURCE
-174.set=DEX
+174.set=ANDROID_RESOURCE
 23.base=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/resources-debug.ap_
 37.set=ANDROID_RESOURCE
 75.base=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/resources-debug.ap_
@@ -254,7 +254,7 @@
 189.base=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/resources-debug.ap_
 112.base=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_f42f19236ddd2c3b0545afff571b713bd52ef4c1
 241.base=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/resources-debug.ap_
-164.base=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-24.2.1_49dd208644c311c4f1484e66172397e186b3f55e
+164.base=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/resources-debug.ap_
 116.set=ANDROID_RESOURCE
 0.set=ANDROID_RESOURCE
 195.file=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_7/classes.dex
@@ -678,7 +678,7 @@ count=291
 29.base=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/resources-debug.ap_
 102.set=ANDROID_RESOURCE
 97.set=ANDROID_RESOURCE
-208.set=DEX
+208.set=ANDROID_RESOURCE
 56.base=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/resources-debug.ap_
 254.set=ANDROID_RESOURCE
 195.set=DEX
@@ -774,7 +774,7 @@ count=291
 171.base=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/resources-debug.ap_
 75.set=ANDROID_RESOURCE
 232.set=ANDROID_RESOURCE
-173.set=DEX
+173.set=ANDROID_RESOURCE
 17.base=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/resources-debug.ap_
 36.set=ANDROID_RESOURCE
 38.file=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/resources-debug.ap_/res/drawable/navigation_empty_icon.xml
