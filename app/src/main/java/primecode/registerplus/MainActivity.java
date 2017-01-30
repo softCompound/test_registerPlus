@@ -1,10 +1,8 @@
 package primecode.registerplus;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -16,6 +14,7 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private static final String TAG = "MyActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,15 +23,6 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -40,9 +30,7 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
 
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.add(R.id.fragment_container1, new RegistrationFragment(), "registrationFragment");
-        ft.commit();
-
+        ft.add(R.id.fragment_container1, new RegistrationFragment(), "home").commit();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -86,22 +74,57 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-//        if (id == R.id.nav_camera) {
-//            // Handle the camera action
-//        } else if (id == R.id.nav_gallery) {
-//
-//        } else if (id == R.id.nav_slideshow) {
-//
-//        } else if (id == R.id.nav_manage) {
-//
-//        } else if (id == R.id.nav_share) {
-//
-//        } else if (id == R.id.nav_send) {
-//
-//        }
+        if (id == R.id.home) {
+            Fragment fragment = getSupportFragmentManager().findFragmentByTag("home");
+            if(fragment != null) {
+                //String s = fragment.getClass().getName();
+               //Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
+                replaceFragments(fragment, false);
+            }
+
+        } else if (id == R.id.myTokens) {
+            //start a new Activity here.
+            Fragment fragment = getSupportFragmentManager().findFragmentByTag("myTokens");
+            if(fragment != null) {
+                //Toast.makeText(this, "This is not ABOUT US", Toast.LENGTH_SHORT).show();
+                getSupportFragmentManager().beginTransaction().add(fragment, "myTokens").commit();
+                replaceFragments(fragment, false);
+            }else {
+                //create new aboutUs Fragment
+                Fragment myToken = new MyTokensFragment();
+                replaceFragments(myToken, true);
+            }
+
+        } else if (id == R.id.aboutUs) {
+            Fragment fragment = getSupportFragmentManager().findFragmentByTag("aboutUs");
+            if(fragment != null) {
+                //Toast.makeText(this, "This is not ABOUT US", Toast.LENGTH_SHORT).show();
+                getSupportFragmentManager().beginTransaction().add(fragment, "aboutUs").commit();
+                replaceFragments(fragment, false);
+            }else {
+                //create new aboutUs Fragment
+                Fragment aboutUs = new AboutUsFragment();
+                replaceFragments(aboutUs, true);
+            }
+
+
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    /**
+     *
+     */
+    public void replaceFragments(Fragment fragment, boolean addToBackStack) {
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.fragment_container1, fragment)
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+
+        if(addToBackStack) ft.addToBackStack(fragment.getTag());
+
+        ft.commit();
     }
 }
