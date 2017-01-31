@@ -9,31 +9,94 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+
+public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
         FragmentButtonClick {
 
 
     @Override
     public void fragmentButtonClicked() {
-        EditText fullname = (EditText) findViewById(R.id.editTextName);
-        EditText address = (EditText) findViewById(R.id.editTextAddress);
+        EditText editFullName = (EditText) findViewById(R.id.editTextName);
+        String fullName = editFullName.getText().toString().trim();
+
+        EditText editAddress = (EditText) findViewById(R.id.editTextAddress);
+        String address = editAddress.getText().toString().trim();
 
         Spinner spinner = (Spinner) findViewById(R.id.reg_spinner);
-        if (spinner.getSelectedItem().toString().trim().equals("Select from the list") ||
-                (fullname.getText().toString().trim().length() < 1 ||
-                        address.getText().toString().trim().length() < 1) ) {
+        String selectedSpinner = spinner.getSelectedItem().toString();
+
+        EditText editNhs = (EditText) findViewById(R.id.editNhsNumber);
+        String nhsNumber = editNhs.getText().toString().trim();
+
+        if (selectedSpinner.equals("Select from the list") ||
+                (!validateFirebaseDbInput(fullName)) ||
+                    (address.length() < 1) ||
+                         (!validateFirebaseDbInput(nhsNumber))) {
             Toast.makeText(this, "Please Complete the Form.", Toast.LENGTH_SHORT).show();
         } else {
-            //validation completed | create new Activity | populate the database
+            //Simple validation completed | create new Activity | populate the database
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+            Date date = new Date();
+            String timeStamp = dateFormat.format(date);
+            Toast.makeText(this, timeStamp , Toast.LENGTH_SHORT).show();
+            //create Token object
+            Token token = new Token(fullName, address, selectedSpinner, nhsNumber, timeStamp);
+            DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+            database.child("users").child(nhsNumber).child(timeStamp).setValue(token);
+
+            ValueEventListener eventListener = new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    Toast.makeText(getApplicationContext(), "Firebase Data changed", Toast.LENGTH_SHORT).show();
+                    Log.d("Tag", "Firebase read operation");
+                    // This method is called once with the initial value and again
+                    // whenever data at this location is updated.
+                    //Token value = dataSnapshot.getValue(Token.class);
+                    //Toast.makeText(getApplicationContext(), "Firebase Data changed", Toast.LENGTH_SHORT).show();
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            };
+            // Read from the database
+            database.addValueEventListener(eventListener);
         }
+    }
+
+    private boolean validateFirebaseDbInput(String string) {
+        if(string.length() > 0) {
+            String[] array = new String[] {".", "[", "$", "]", "#"};
+            for(String check: array){
+                if(string.contains(check)) {
+                        Toast.makeText(this, "Name or NHS Number cannot contain character [ " + check + " ]", Toast.LENGTH_LONG).show();
+                        return false;
+                }
+            }
+
+        } else {
+            return false;
+        }
+        return true;
     }
 
 

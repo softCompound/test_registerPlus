@@ -5,6 +5,26 @@
     android:padding="25dp">
 
     <TextView
+        android:id="@+id/reg_nhsNumber"
+        android:text="@string/reg_nhs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <EditText
+        android:id="@+id/editNhsNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/reg_name"
+        android:padding="10dp"
+        android:hint="@string/reg_nhs_number"
+        android:inputType="number|textNoSuggestions"
+        android:textCursorDrawable="@drawable/cursor_color"
+        android:background="@drawable/border_shape"
+        android:layout_marginTop="@dimen/form_space_light"
+        android:layout_marginBottom="@dimen/form_space_medium" />
+
+    <TextView
         android:id="@+id/reg_name"
         android:text="@string/reg_name"
         android:layout_width="match_parent"
