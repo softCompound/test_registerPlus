@@ -14,6 +14,8 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+import java.lang.reflect.Field;
+
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -30,9 +32,13 @@ import com.google.firebase.database.ValueEventListener;
 
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Locale;
+import java.util.Map;
+import java.util.Set;
 
 
 public class MainActivity extends AppCompatActivity
@@ -80,9 +86,9 @@ public class MainActivity extends AppCompatActivity
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     GenericTypeIndicator<HashMap<String, Object>> t = new GenericTypeIndicator<HashMap<String, Object>>() {};
-
-                    HashMap<String, Object> s = dataSnapshot.getValue(t);
-                        Toast.makeText(getApplicationContext(), s.keySet().toString(), Toast.LENGTH_SHORT).show();
+                    ArrayList<Token> allTokens = manipulateFirebaseOutput(dataSnapshot.getValue(t));
+//                    HashMap<String, Object> s = dataSnapshot.getValue(t);
+//                        Toast.makeText(getApplicationContext(), s.keySet().toString(), Toast.LENGTH_SHORT).show();
                 }
 
                 @Override
@@ -94,10 +100,32 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    public ArrayList<Token> manipulateFirebaseOutput(HashMap<String, Object> output) {
+        Set entrySet = output.entrySet();
+
+        if(entrySet.size() > 0) {
+            ArrayList<Token> allTokens = new ArrayList<>();
+            Iterator it = entrySet.iterator();
+            while(it.hasNext()){
+                Map.Entry me = (Map.Entry) it.next();
+
+                String tokenText = me.getValue().toString();
+                String[] tokenValues = ObjectToClassConverter.filtrStringToClass(tokenText);
+                Token token = new Token(tokenValues[4], tokenValues[3],tokenValues[2],tokenValues[1],tokenValues[0]);
+                allTokens.add(token);
+            }
+
+            return allTokens;
+        }
+
+        return null;
+    }
+
     @Override
     public boolean validateFirebaseDbInput(String string) {
         if(string.length() > 0) {
             String[] array = new String[] {".", "[", "$", "]", "#"};
+
             for(String check: array){
                 if(string.contains(check)) {
                         Toast.makeText(this, "Name or NHS Number cannot contain character [ " + check + " ]", Toast.LENGTH_LONG).show();

@@ -64,7 +64,7 @@ public class RegistrationFragment extends Fragment {
             fragmentButtonClick = (FragmentButtonClick) context;
         } catch (ClassCastException e) {
             throw new ClassCastException(context.toString()
-                    + " must implement OnHeadlineSelectedListener");
+                    + " must implement FragmentButtonClick Interface");
         }
     }
 }

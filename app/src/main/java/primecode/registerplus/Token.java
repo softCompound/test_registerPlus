@@ -9,7 +9,7 @@ public class Token {
 
     public Token() {}
 
-    public Token(String fullname, String address, String inquiryNature, String nhsNumber, String date) {
+    public Token(String fullname, String date, String address, String nhsNumber, String inquiryNature) {
         this.fullname = fullname;
         this.address = address;
         this.inquiryNature = inquiryNature;
