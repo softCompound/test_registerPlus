@@ -22,6 +22,8 @@
     <string name="reg_nature_of_inquiry">Nature of Inquiry</string>
     <string name="reg_nhs_number">Please enter your NHS number</string>
     <string name="reg_nhs">NHS Number</string>
+    <string name="view_my_tokens_button">View My Tokens</string>
+    <string name="query_nhs">Please Enter Your NHS number</string>
 
     <string-array name="inqury_nature_array">
 

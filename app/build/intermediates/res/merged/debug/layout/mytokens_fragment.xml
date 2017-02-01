@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="25dp"
+    >
+
+    <TextView
+        android:id="@+id/text_nhs_query"
+        android:layout_marginBottom="@dimen/form_space_light"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="@string/query_nhs"
+        android:gravity="center"/>
+
+    <EditText
+        android:id="@+id/edit_nhsQuery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/reg_name"
+        android:padding="10dp"
+        android:hint="@string/reg_nhs_number"
+        android:inputType="text|textNoSuggestions"
+        android:textCursorDrawable="@drawable/cursor_color"
+        android:background="@drawable/border_shape"
+        android:layout_marginTop="@dimen/form_space_light"
+        android:layout_marginBottom="@dimen/form_space_medium" />
+
+    <Button
+        android:id="@+id/button_view_token"
+        android:text="@string/view_my_tokens_button"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="@dimen/form_space_light"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_details"
+        android:layout_marginTop="@dimen/form_space_heavy" />
+
+    <ProgressBar
+        style="?android:attr/progressBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar_myTokenFragment"
+        android:visibility="invisible" />
 
 </LinearLayout>

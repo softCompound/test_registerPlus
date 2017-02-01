@@ -1825,11 +1825,11 @@
         <item>Registration</item>
         <item>Book Appointment</item>
         <item>Submit Samples</item>
-    </string-array><string name="aboutUsText">
+    </string-array><string name="view_my_tokens_button">View My Tokens</string><string name="aboutUsText">
         \n RegisterPlus app records arrival of the patients in the hospital. \n
         \nVersion 1.0 (Jan 2016)\n
         Copyrights © primeCode.net\n
-    </string><string name="navigation_drawer_close">Close navigation drawer</string><string name="drawerLayout_myTokens">My Tokens</string><string name="reg_nhs_number">Please enter your NHS number</string><string name="reg_get_token_button">Get Token</string><string name="drawerLayout_aboutUs">About Us</string><string name="reg_address">Address</string><string name="drawerLayout_home">Home</string><string name="navigation_drawer_open">Open navigation drawer</string></file><file path="/Users/nagendralimbu/Desktop/RegisterPlus/app/src/main/res/values/styles.xml" qualifiers=""><style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    </string><string name="navigation_drawer_close">Close navigation drawer</string><string name="drawerLayout_myTokens">My Tokens</string><string name="reg_nhs_number">Please enter your NHS number</string><string name="reg_get_token_button">Get Token</string><string name="drawerLayout_aboutUs">About Us</string><string name="reg_address">Address</string><string name="drawerLayout_home">Home</string><string name="navigation_drawer_open">Open navigation drawer</string><string name="query_nhs">Please Enter Your NHS number</string></file><file path="/Users/nagendralimbu/Desktop/RegisterPlus/app/src/main/res/values/styles.xml" qualifiers=""><style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorLightBlue</item>

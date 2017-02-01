@@ -6,4 +6,5 @@ package primecode.registerplus;
 
 public interface FragmentButtonClick {
     void fragmentButtonClicked();
+    boolean validateFirebaseDbInput(String string);
 }

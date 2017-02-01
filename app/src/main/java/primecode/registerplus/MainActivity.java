@@ -32,9 +32,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Locale;
-import java.util.Objects;
 
 
 public class MainActivity extends AppCompatActivity
@@ -96,7 +94,8 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    private boolean validateFirebaseDbInput(String string) {
+    @Override
+    public boolean validateFirebaseDbInput(String string) {
         if(string.length() > 0) {
             String[] array = new String[] {".", "[", "$", "]", "#"};
             for(String check: array){
