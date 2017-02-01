@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "1037821620744",
-    "firebase_url": "https://registerplus-e830b.firebaseio.com",
-    "project_id": "registerplus-e830b",
-    "storage_bucket": "registerplus-e830b.appspot.com"
+    "project_number": "586127333017",
+    "firebase_url": "https://registerplus-e5bca.firebaseio.com",
+    "project_id": "registerplus-e5bca",
+    "storage_bucket": "registerplus-e5bca.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1037821620744:android:98adf77abf6e6920",
+        "mobilesdk_app_id": "1:586127333017:android:98adf77abf6e6920",
         "android_client_info": {
           "package_name": "primecode.registerplus"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1037821620744-avvq4hs377bqkil5e49dd4jokuk1t2l1.apps.googleusercontent.com",
+          "client_id": "586127333017-fjm88i21b1lg1tkbh7dl147t5me1rndp.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "primecode.registerplus",
@@ -23,13 +23,13 @@
           }
         },
         {
-          "client_id": "1037821620744-32n7h4jcblc4ncono8bqhqtmuevlnhkf.apps.googleusercontent.com",
+          "client_id": "586127333017-c57iaaf5u6f5pegacm13v7389c76rcqt.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCN83ovyvyhX2ocCiSRr8ajV5HhT8Rjkdk"
+          "current_key": "AIzaSyBQuExVoSyUqh1sBj33jnp-o9RsoPbv19o"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "1037821620744-32n7h4jcblc4ncono8bqhqtmuevlnhkf.apps.googleusercontent.com",
+              "client_id": "586127333017-c57iaaf5u6f5pegacm13v7389c76rcqt.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

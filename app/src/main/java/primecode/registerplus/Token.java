@@ -7,6 +7,8 @@ package primecode.registerplus;
 public class Token {
     private String fullname, address, inquiryNature, nhsNumber, date;
 
+    public Token() {}
+
     public Token(String fullname, String address, String inquiryNature, String nhsNumber, String date) {
         this.fullname = fullname;
         this.address = address;

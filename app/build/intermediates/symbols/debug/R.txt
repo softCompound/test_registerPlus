@@ -746,7 +746,7 @@ int id design_menu_item_text 0x7f0d007f
 int id design_navigation_view 0x7f0d007e
 int id disableHome 0x7f0d000f
 int id drawer_layout 0x7f0d0075
-int id editNhsNumber 0x7f0d0093
+int id editNhsNum 0x7f0d0093
 int id editTextAddress 0x7f0d0097
 int id editTextName 0x7f0d0095
 int id edit_query 0x7f0d0068

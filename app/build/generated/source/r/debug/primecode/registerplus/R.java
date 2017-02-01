@@ -2754,7 +2754,7 @@ containing a value of this type.
         public static final int design_navigation_view=0x7f0d007e;
         public static final int disableHome=0x7f0d000f;
         public static final int drawer_layout=0x7f0d0075;
-        public static final int editNhsNumber=0x7f0d0093;
+        public static final int editNhsNum=0x7f0d0093;
         public static final int editTextAddress=0x7f0d0097;
         public static final int editTextName=0x7f0d0095;
         public static final int edit_query=0x7f0d0068;

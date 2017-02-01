@@ -12,13 +12,13 @@
 
 
     <EditText
-        android:id="@+id/editNhsNumber"
+        android:id="@+id/editNhsNum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:labelFor="@+id/reg_name"
         android:padding="10dp"
         android:hint="@string/reg_nhs_number"
-        android:inputType="number|textNoSuggestions"
+        android:inputType="text|textNoSuggestions"
         android:textCursorDrawable="@drawable/cursor_color"
         android:background="@drawable/border_shape"
         android:layout_marginTop="@dimen/form_space_light"

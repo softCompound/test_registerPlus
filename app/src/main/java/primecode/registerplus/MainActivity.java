@@ -9,7 +9,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
@@ -21,16 +20,21 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
+
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
-
+import java.util.Objects;
 
 
 public class MainActivity extends AppCompatActivity
@@ -42,6 +46,7 @@ public class MainActivity extends AppCompatActivity
 
     // [START declare_auth_listener]
     private FirebaseAuth.AuthStateListener mAuthListener;
+
     @Override
     public void fragmentButtonClicked() {
         EditText editFullName = (EditText) findViewById(R.id.editTextName);
@@ -53,7 +58,7 @@ public class MainActivity extends AppCompatActivity
         Spinner spinner = (Spinner) findViewById(R.id.reg_spinner);
         String selectedSpinner = spinner.getSelectedItem().toString();
 
-        EditText editNhs = (EditText) findViewById(R.id.editNhsNumber);
+        EditText editNhs = (EditText) findViewById(R.id.editNhsNum);
         String nhsNumber = editNhs.getText().toString().trim();
 
         if (selectedSpinner.equals("Select from the list") ||
@@ -70,27 +75,24 @@ public class MainActivity extends AppCompatActivity
             Toast.makeText(this, timeStamp , Toast.LENGTH_SHORT).show();
             //create Token object
             Token token = new Token(fullName, address, selectedSpinner, nhsNumber, timeStamp);
-            DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-            database.child("users").child(nhsNumber).child(timeStamp).setValue(token);
+            DatabaseReference database = FirebaseDatabase.getInstance().getReference("/users/" + nhsNumber + "/");
+            database.child(timeStamp).setValue(token);
 
-            ValueEventListener eventListener = new ValueEventListener() {
+            database.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
-                    Toast.makeText(getApplicationContext(), "Firebase Data changed", Toast.LENGTH_SHORT).show();
-                    Log.d("Tag", "Firebase read operation");
-                    // This method is called once with the initial value and again
-                    // whenever data at this location is updated.
-                    //Token value = dataSnapshot.getValue(Token.class);
-                    //Toast.makeText(getApplicationContext(), "Firebase Data changed", Toast.LENGTH_SHORT).show();
+                    GenericTypeIndicator<HashMap<String, Object>> t = new GenericTypeIndicator<HashMap<String, Object>>() {};
+
+                    HashMap<String, Object> s = dataSnapshot.getValue(t);
+                        Toast.makeText(getApplicationContext(), s.keySet().toString(), Toast.LENGTH_SHORT).show();
                 }
 
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
 
+                Toast.makeText(getApplicationContext(), "dberror " + databaseError.getMessage(), Toast.LENGTH_LONG).show();
                 }
-            };
-            // Read from the database
-            database.addValueEventListener(eventListener);
+            });
         }
     }
 
@@ -252,8 +254,6 @@ public class MainActivity extends AppCompatActivity
                 }
                 replaceFragments(aboutUs, addToBackStack);
             }
-
-
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -277,14 +277,11 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void signInAnonymously() {
-        //showProgressDialog();
-        // [START signin_anonymously]
+
         mAuth.signInAnonymously()
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(Task<AuthResult> task) {
-                       // Log.d(TAG, "signInAnonymously:onComplete:" + task.isSuccessful());
-
                         // If sign in fails, display a message to the user. If sign in succeeds
                         // the auth state listener will be notified and logic to handle the
                         // signed in user can be handled in the listener.
@@ -293,13 +290,8 @@ public class MainActivity extends AppCompatActivity
                             Toast.makeText(getApplicationContext(), "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                         }
-
-                        // [START_EXCLUDE]
-                        //hideProgressDialog();
-                        // [END_EXCLUDE]
                     }
                 });
-        // [END signin_anonymously]
     }
 
 }
