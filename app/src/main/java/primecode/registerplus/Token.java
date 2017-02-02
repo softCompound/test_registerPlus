@@ -1,13 +1,15 @@
 package primecode.registerplus;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by nagendralimbu on 30/01/2017.
  */
 
 public class Token {
-    private String fullname, address, inquiryNature, nhsNumber, date;
 
-    public Token() {}
+    private String fullname, address, inquiryNature, nhsNumber, date;
 
     public Token(String fullname, String date, String address, String nhsNumber, String inquiryNature) {
         this.fullname = fullname;

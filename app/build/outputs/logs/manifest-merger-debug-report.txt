@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/nagendralimbu/Desktop/RegisterPlus/app/src/main/AndroidManifest.xml:2:1-33:12
+ADDED from /Users/nagendralimbu/Desktop/RegisterPlus/app/src/main/AndroidManifest.xml:2:1-32:12
 	package
 		ADDED from /Users/nagendralimbu/Desktop/RegisterPlus/app/src/main/AndroidManifest.xml:3:5-37
 		INJECTED from /Users/nagendralimbu/Desktop/RegisterPlus/app/src/main/AndroidManifest.xml
@@ -22,7 +22,7 @@ MERGED from [com.google.firebase:firebase-iid:10.0.1] /Users/nagendralimbu/Deskt
 	android:name
 		ADDED from /Users/nagendralimbu/Desktop/RegisterPlus/app/src/main/AndroidManifest.xml:5:22-64
 application
-ADDED from /Users/nagendralimbu/Desktop/RegisterPlus/app/src/main/AndroidManifest.xml:7:5-31:19
+ADDED from /Users/nagendralimbu/Desktop/RegisterPlus/app/src/main/AndroidManifest.xml:7:5-30:19
 MERGED from [com.android.support:design:24.2.1] /Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:appcompat-v7:24.2.1] /Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:animated-vector-drawable:24.2.1] /Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/AndroidManifest.xml:22:5-20
@@ -70,7 +70,7 @@ ADDED from /Users/nagendralimbu/Desktop/RegisterPlus/app/src/main/AndroidManifes
 	android:name
 		ADDED from /Users/nagendralimbu/Desktop/RegisterPlus/app/src/main/AndroidManifest.xml:21:27-74
 activity#primecode.registerplus.MainActivity
-ADDED from /Users/nagendralimbu/Desktop/RegisterPlus/app/src/main/AndroidManifest.xml:24:9-28:20
+ADDED from /Users/nagendralimbu/Desktop/RegisterPlus/app/src/main/AndroidManifest.xml:24:9-27:58
 	android:label
 		ADDED from /Users/nagendralimbu/Desktop/RegisterPlus/app/src/main/AndroidManifest.xml:26:13-45
 	android:theme

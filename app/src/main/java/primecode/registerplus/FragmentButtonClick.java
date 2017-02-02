@@ -8,7 +8,11 @@ import java.util.HashMap;
  */
 
 public interface FragmentButtonClick {
-    void fragmentButtonClicked();
+    void createMyTokenFragment();
+    ArrayList<Token> getAllTokens();
+    void fragmentButtonClicked(String fullName, String address, String selectedSpinner, String nhsNumber);
     boolean validateFirebaseDbInput(String string);
+    void makeToast(String s);
+    HashMap<String, Object> queryNhsNumber(String nhsNumber);
     ArrayList<Token> manipulateFirebaseOutput(HashMap<String, Object> output);
 }

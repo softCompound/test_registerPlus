@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed Feb 01 13:46:35 GMT 2017
+#Thu Feb 02 14:00:16 GMT 2017
 210.set=ANDROID_RESOURCE
 282.file=/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/resources-debug.ap_/res/color-v23/abc_tint_btn_checkable.xml
 14.set=ANDROID_RESOURCE

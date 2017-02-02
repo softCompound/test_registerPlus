@@ -9,7 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by nagendralimbu on 29/01/2017.
@@ -17,7 +21,8 @@ import android.widget.Spinner;
 
 public class RegistrationFragment extends Fragment {
     private FragmentButtonClick fragmentButtonClick;
-
+    private View view;
+    private String fullName, address, nhsNumber, selectedSpinner;
     public RegistrationFragment() {
         super();
     }
@@ -35,7 +40,7 @@ public class RegistrationFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.registration_form_fragment, container, false);
+        view = inflater.inflate(R.layout.registration_form_fragment, container, false);
         Spinner spinner = (Spinner) view.findViewById(R.id.reg_spinner);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
@@ -49,7 +54,10 @@ public class RegistrationFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                fragmentButtonClick.fragmentButtonClicked();
+                if(validateForm()) {
+                    setProgressBar();
+                    fragmentButtonClick.fragmentButtonClicked(fullName, address, selectedSpinner, nhsNumber);
+                }
             }
         });
 
@@ -66,5 +74,53 @@ public class RegistrationFragment extends Fragment {
             throw new ClassCastException(context.toString()
                     + " must implement FragmentButtonClick Interface");
         }
+    }
+
+    public void setProgressBar(){
+        ProgressBar pbar = (ProgressBar) view.findViewById(R.id.progressBar2);
+        pbar.setVisibility(View.VISIBLE);
+
+        TextView tfullName = (TextView) view.findViewById(R.id.reg_name);
+        TextView tnhs = (TextView) view.findViewById(R.id.reg_nhsNumber);
+        TextView taddress = (TextView) view.findViewById(R.id.reg_address);
+        TextView tspinner = (TextView) view.findViewById(R.id.text_spinner);
+
+        Button button = (Button) view.findViewById(R.id.button_get_token);
+
+        tfullName.setVisibility(View.GONE);
+        tnhs.setVisibility(View.GONE);
+        taddress.setVisibility(View.GONE);
+        tspinner.setVisibility(View.GONE);
+        button.setVisibility(View.GONE);
+
+    }
+
+    private boolean validateForm(){
+        EditText editFullName = (EditText) view.findViewById(R.id.editTextName);
+        fullName = editFullName.getText().toString().trim();
+
+        EditText editAddress = (EditText) view.findViewById(R.id.editTextAddress);
+        address = editAddress.getText().toString().trim();
+
+        Spinner spinner = (Spinner) view.findViewById(R.id.reg_spinner);
+        selectedSpinner = spinner.getSelectedItem().toString();
+
+        EditText editNhs = (EditText) view.findViewById(R.id.editNhsNum);
+        nhsNumber = editNhs.getText().toString().trim();
+
+        if (selectedSpinner.equals("Select from the list") ||
+                (!fragmentButtonClick.validateFirebaseDbInput(fullName)) ||
+                (address.length() < 1) ||
+                (!fragmentButtonClick.validateFirebaseDbInput(nhsNumber))) {
+            Toast.makeText(getContext(), "Please Complete the Form.", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            editFullName.setVisibility(View.GONE);
+            editAddress.setVisibility(View.GONE);
+            spinner.setVisibility(View.GONE);
+            editNhs.setVisibility(View.GONE);
+            return true;
+        }
+        return false;
     }
 }

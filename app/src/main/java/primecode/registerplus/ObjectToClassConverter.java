@@ -10,13 +10,15 @@ final class ObjectToClassConverter {
         super();
     }
 
-    public static String[] filtrStringToClass(String string){
+    static String[] filtrStringToClass(String string){
+
         StringBuilder sb = new StringBuilder(string);
         sb.deleteCharAt(sb.indexOf("{"));
         sb.deleteCharAt(sb.indexOf("}"));
 
-        int count = 0;
         String[] values = new String[5];
+
+        int count = 0;
         int valuesCount = 0;
         int lastEqualsIndex = 0;
 

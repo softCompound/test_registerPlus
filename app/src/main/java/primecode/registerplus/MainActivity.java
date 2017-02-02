@@ -1,7 +1,9 @@
 package primecode.registerplus;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -9,12 +11,14 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
-import java.lang.reflect.Field;
 
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -22,7 +26,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -44,7 +47,8 @@ import java.util.Set;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
         FragmentButtonClick {
-
+    private static final String MESSAGE = "registerPlus";
+    ArrayList<Token> allTokens;
     private FirebaseAuth mAuth;
     // [END declare_auth]
 
@@ -52,25 +56,7 @@ public class MainActivity extends AppCompatActivity
     private FirebaseAuth.AuthStateListener mAuthListener;
 
     @Override
-    public void fragmentButtonClicked() {
-        EditText editFullName = (EditText) findViewById(R.id.editTextName);
-        String fullName = editFullName.getText().toString().trim();
-
-        EditText editAddress = (EditText) findViewById(R.id.editTextAddress);
-        String address = editAddress.getText().toString().trim();
-
-        Spinner spinner = (Spinner) findViewById(R.id.reg_spinner);
-        String selectedSpinner = spinner.getSelectedItem().toString();
-
-        EditText editNhs = (EditText) findViewById(R.id.editNhsNum);
-        String nhsNumber = editNhs.getText().toString().trim();
-
-        if (selectedSpinner.equals("Select from the list") ||
-                (!validateFirebaseDbInput(fullName)) ||
-                    (address.length() < 1) ||
-                         (!validateFirebaseDbInput(nhsNumber))) {
-            Toast.makeText(this, "Please Complete the Form.", Toast.LENGTH_SHORT).show();
-        } else {
+    public void fragmentButtonClicked(String fullName, String address, String selectedSpinner, String nhsNumber) {
             signInAnonymously();
             //Simple validation completed | create new Activity | populate the database
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
@@ -86,7 +72,8 @@ public class MainActivity extends AppCompatActivity
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     GenericTypeIndicator<HashMap<String, Object>> t = new GenericTypeIndicator<HashMap<String, Object>>() {};
-                    ArrayList<Token> allTokens = manipulateFirebaseOutput(dataSnapshot.getValue(t));
+                    allTokens = manipulateFirebaseOutput(dataSnapshot.getValue(t));
+                    createMyTokenFragment();
 //                    HashMap<String, Object> s = dataSnapshot.getValue(t);
 //                        Toast.makeText(getApplicationContext(), s.keySet().toString(), Toast.LENGTH_SHORT).show();
                 }
@@ -97,7 +84,11 @@ public class MainActivity extends AppCompatActivity
                 Toast.makeText(getApplicationContext(), "dberror " + databaseError.getMessage(), Toast.LENGTH_LONG).show();
                 }
             });
-        }
+    }
+
+    public void createMyTokenFragment(){
+        TokenDisplayFragment tdf = new TokenDisplayFragment();
+        replaceFragments(tdf, false);
     }
 
     public ArrayList<Token> manipulateFirebaseOutput(HashMap<String, Object> output) {
@@ -110,6 +101,7 @@ public class MainActivity extends AppCompatActivity
                 Map.Entry me = (Map.Entry) it.next();
 
                 String tokenText = me.getValue().toString();
+                //Toast.makeText(this, tokenText.toString(), Toast.LENGTH_SHORT).show();
                 String[] tokenValues = ObjectToClassConverter.filtrStringToClass(tokenText);
                 Token token = new Token(tokenValues[4], tokenValues[3],tokenValues[2],tokenValues[1],tokenValues[0]);
                 allTokens.add(token);
@@ -177,6 +169,7 @@ public class MainActivity extends AppCompatActivity
                     Toast.makeText(getApplicationContext(), "onAuthStateChanged:signed_in:" + user.getUid(), Toast.LENGTH_LONG).show();
                 } else {
                     // User is signed out
+                    signInAnonymously();
                     Toast.makeText(getApplicationContext(), "onAuthStateChanged:signed_out", Toast.LENGTH_LONG).show();
                 }
                 // ...
@@ -234,57 +227,70 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
         if (id == R.id.home) {
-            Fragment fragment = getSupportFragmentManager().findFragmentByTag("home");
+            Fragment fragment = fm.findFragmentByTag("home");
             if(fragment != null) {
                 //String s = fragment.getClass().getName();
                 //Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
+                makeToast("home exixts!");
+
                 replaceFragments(fragment, false);
             } else {
-                replaceFragments(new RegistrationFragment(), true);
+                makeToast("home created!");
+                replaceFragments(new RegistrationFragment(), false);
             }
 
 
         } else if (id == R.id.myTokens) {
             //start a new Activity here.
-            Fragment fragment = getSupportFragmentManager().findFragmentByTag("myTokens");
+            Fragment fragment = fm.findFragmentByTag("myTokens");
+            boolean addToBackStack = false;
+            if(fm.findFragmentById(R.id.fragment_container1) instanceof RegistrationFragment) {
+                addToBackStack = true;
+            }
             if(fragment != null) {
+                makeToast("mytokenFragment exists");
+
                 //Toast.makeText(this, "This is not ABOUT US", Toast.LENGTH_SHORT).show();
-                getSupportFragmentManager().beginTransaction().add(fragment, "myTokens").commit();
-                replaceFragments(fragment, false);
+                replaceFragments(fragment, addToBackStack);
             }else {
-                boolean addToBackStack = true;
+                makeToast("mytokenFragment created");
+
                 //create new aboutUs Fragment
                 Fragment myToken = new MyTokensFragment();
-                if(getSupportFragmentManager().findFragmentById(R.id.fragment_container1) instanceof AboutUsFragment) {
-                    addToBackStack = false;
-                }
+                ft.add(myToken, "myTokens");
                 replaceFragments(myToken, addToBackStack);
             }
 
         } else if (id == R.id.aboutUs) {
-            Fragment fragment = getSupportFragmentManager().findFragmentByTag("aboutUs");
+            Fragment fragment = fm.findFragmentByTag("aboutUs");
+            boolean addToBackStack = false;
+            if(fm.findFragmentById(R.id.fragment_container1) instanceof RegistrationFragment) {
+                addToBackStack = true;
+            }
             if(fragment != null) {
+                makeToast("aboutUs exists");
+
                 //Toast.makeText(this, "This is not ABOUT US", Toast.LENGTH_SHORT).show();
-                getSupportFragmentManager().beginTransaction().add(fragment, "aboutUs").commit();
-                replaceFragments(fragment, false);
+                replaceFragments(fragment, addToBackStack);
             }else {
-                boolean addToBackStack = true;
+                makeToast("mytokenFragment created");
+
                 //create new aboutUs Fragment
-                Fragment aboutUs = new AboutUsFragment();
-                //create new aboutUs Fragment
-                if(getSupportFragmentManager().findFragmentById(R.id.fragment_container1) instanceof MyTokensFragment) {
-                    addToBackStack = false;
-                }
+                AboutUsFragment aboutUs = new AboutUsFragment();
+                ft.add(aboutUs, "aboutUs");
                 replaceFragments(aboutUs, addToBackStack);
             }
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+        ft.commit();
+
         return true;
     }
 
@@ -295,8 +301,6 @@ public class MainActivity extends AppCompatActivity
 
         if(addToBackStack) {
             ft.addToBackStack(fragment.getTag());
-        } else {
-            getSupportFragmentManager().popBackStack();
         }
 
 
@@ -321,4 +325,40 @@ public class MainActivity extends AppCompatActivity
                 });
     }
 
+    public void makeToast(String s){
+        Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public ArrayList<Token> getAllTokens() {
+        return allTokens;
+    }
+
+    @Override
+    public HashMap<String, Object> queryNhsNumber(String nhsNumber) {
+
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("/users/" + nhsNumber + "/");
+
+        database.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                GenericTypeIndicator<HashMap<String, Object>> t = new GenericTypeIndicator<HashMap<String, Object>>() {};
+               if(dataSnapshot.hasChildren()){
+                   allTokens = manipulateFirebaseOutput(dataSnapshot.getValue(t));
+                   if(allTokens.size() > 0) {
+                       makeToast("Database Read is Good. Size => " + allTokens.size());
+                   }
+               }else {
+                   makeToast("No result found!");
+               }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
+        return null;
+    }
 }
