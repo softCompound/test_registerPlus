@@ -240,6 +240,10 @@
         "source": "/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/res/layout/design_navigation_item_separator.xml"
     },
     {
+        "merged": "/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/merged/debug/layout/nhs_query_unsuccessful.xml",
+        "source": "/Users/nagendralimbu/Desktop/RegisterPlus/app/src/main/res/layout/nhs_query_unsuccessful.xml"
+    },
+    {
         "merged": "/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/merged/debug/layout/abc_action_menu_item_layout.xml",
         "source": "/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_action_menu_item_layout.xml"
     }

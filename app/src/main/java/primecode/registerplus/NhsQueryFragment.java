@@ -36,11 +36,20 @@ public class NhsQueryFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.token_display, container, false);
+        ArrayList<Token> t = fragmentButtonClick.getNhsQueryArray();
+        View view;
 
-        mListView = (ListView) view.findViewById(R.id.list);
-        ArrayList<Token> t = fragmentButtonClick.getAllTokens();
-        mListView.setAdapter(new TokenAdapter(getContext(), t));
-        return view;
+        if(t.size() > 0){
+            view = inflater.inflate(R.layout.token_display, container, false);
+
+            mListView = (ListView) view.findViewById(R.id.list);
+            mListView.setAdapter(new TokenAdapter(getContext(), t));
+            return view;
+        }
+        else{
+            view = inflater.inflate(R.layout.nhs_query_unsuccessful, container, false);
+            return view;
+        }
+
     }
 }

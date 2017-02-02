@@ -67,7 +67,6 @@ public class MyTokensFragment extends Fragment {
                     ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.progressBar_myTokenFragment);
                     progressBar.setVisibility(View.VISIBLE);
                     fragmentButtonClick.queryNhsNumber(nhsNumber.getText().toString().trim());
-                    progressBar.setVisibility(View.INVISIBLE);
 
                 }
                 else if(nhsNumber.getText().toString().length() < 1) {

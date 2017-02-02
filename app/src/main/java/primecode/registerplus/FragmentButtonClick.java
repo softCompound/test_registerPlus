@@ -8,6 +8,7 @@ import java.util.HashMap;
  */
 
 public interface FragmentButtonClick {
+    ArrayList<Token> getNhsQueryArray();
     void createMyTokenFragment();
     ArrayList<Token> getAllTokens();
     void fragmentButtonClicked(String fullName, String address, String selectedSpinner, String nhsNumber);

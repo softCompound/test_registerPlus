@@ -5,57 +5,49 @@
     density="xxhdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="188872509030705"
+    timestamp="191618657430933"
     token="-8312388618017193898"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="1234" />
+        duration="573" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="209" />
+        duration="136" />
     <task
         name="verifier"
-        duration="114" />
+        duration="52" />
 
     <artifact
         location="/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"
         type="DEX" />
 
     <build
-        timestamp="173913985017127"
+        timestamp="189259828571970"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/Users/nagendralimbu/Desktop/RegisterPlus/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="174066924476238"
+        timestamp="191200891226370"
         verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
+            type="RESOURCES" />
+        <artifact
+            location="/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex"
+            type="DEX" />
         <artifact
             location="/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_7/classes.dex"
             type="DEX" />
     </build>
     <build
-        timestamp="174235403737744"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex"
-            type="DEX" />
-    </build>
-    <build
-        timestamp="179865657458047"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
-            type="RESOURCES" />
-    </build>
-    <build
-        timestamp="188872509030705"
+        timestamp="191618657430933"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"

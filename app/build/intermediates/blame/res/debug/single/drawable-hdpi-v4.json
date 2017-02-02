@@ -48,12 +48,12 @@
         "source": "/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
-        "merged": "/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_popup_background_mtrl_mult.9.png",
-        "source": "/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_popup_background_mtrl_mult.9.png"
-    },
-    {
         "merged": "/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png",
         "source": "/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png"
+    },
+    {
+        "merged": "/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_popup_background_mtrl_mult.9.png",
+        "source": "/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-hdpi-v4/abc_popup_background_mtrl_mult.9.png"
     },
     {
         "merged": "/Users/nagendralimbu/Desktop/RegisterPlus/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png",

@@ -1,9 +1,7 @@
 package primecode.registerplus;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -11,13 +9,9 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.Spinner;
+
 import android.widget.Toast;
 
 
@@ -48,7 +42,9 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
         FragmentButtonClick {
     private static final String MESSAGE = "registerPlus";
-    ArrayList<Token> allTokens;
+    ArrayList<Token> allTokens = new ArrayList<>();
+    ArrayList<Token> nhsQuery = new ArrayList<>();
+
     private FirebaseAuth mAuth;
     // [END declare_auth]
 
@@ -227,70 +223,57 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
         if (id == R.id.home) {
-            Fragment fragment = fm.findFragmentByTag("home");
+            Fragment fragment = getSupportFragmentManager().findFragmentByTag("home");
             if(fragment != null) {
                 //String s = fragment.getClass().getName();
                 //Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
-                makeToast("home exixts!");
-
                 replaceFragments(fragment, false);
             } else {
-                makeToast("home created!");
                 replaceFragments(new RegistrationFragment(), false);
             }
 
 
         } else if (id == R.id.myTokens) {
             //start a new Activity here.
-            Fragment fragment = fm.findFragmentByTag("myTokens");
-            boolean addToBackStack = false;
-            if(fm.findFragmentById(R.id.fragment_container1) instanceof RegistrationFragment) {
-                addToBackStack = true;
-            }
+            Fragment fragment = getSupportFragmentManager().findFragmentByTag("myTokens");
             if(fragment != null) {
-                makeToast("mytokenFragment exists");
-
                 //Toast.makeText(this, "This is not ABOUT US", Toast.LENGTH_SHORT).show();
-                replaceFragments(fragment, addToBackStack);
+                //getSupportFragmentManager().beginTransaction().add(fragment, "myTokens").commit();
+                replaceFragments(fragment, false);
             }else {
-                makeToast("mytokenFragment created");
-
+                boolean addToBackStack = false;
                 //create new aboutUs Fragment
                 Fragment myToken = new MyTokensFragment();
-                ft.add(myToken, "myTokens");
+                if(getSupportFragmentManager().findFragmentById(R.id.fragment_container1) instanceof RegistrationFragment) {
+                    addToBackStack = true;
+                }
                 replaceFragments(myToken, addToBackStack);
             }
 
         } else if (id == R.id.aboutUs) {
-            Fragment fragment = fm.findFragmentByTag("aboutUs");
             boolean addToBackStack = false;
-            if(fm.findFragmentById(R.id.fragment_container1) instanceof RegistrationFragment) {
-                addToBackStack = true;
-            }
+            Fragment fragment = getSupportFragmentManager().findFragmentByTag("aboutUs");
             if(fragment != null) {
-                makeToast("aboutUs exists");
-
                 //Toast.makeText(this, "This is not ABOUT US", Toast.LENGTH_SHORT).show();
+                //getSupportFragmentManager().beginTransaction().add(fragment, "aboutUs").commit();
                 replaceFragments(fragment, addToBackStack);
             }else {
-                makeToast("mytokenFragment created");
-
                 //create new aboutUs Fragment
-                AboutUsFragment aboutUs = new AboutUsFragment();
-                ft.add(aboutUs, "aboutUs");
+                Fragment aboutUs = new AboutUsFragment();
+                //create new aboutUs Fragment
+                if(getSupportFragmentManager().findFragmentById(R.id.fragment_container1) instanceof RegistrationFragment) {
+                    addToBackStack = true;
+                }
                 replaceFragments(aboutUs, addToBackStack);
             }
         }
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
-        ft.commit();
-
         return true;
     }
 
@@ -301,6 +284,8 @@ public class MainActivity extends AppCompatActivity
 
         if(addToBackStack) {
             ft.addToBackStack(fragment.getTag());
+        }else {
+            getSupportFragmentManager().popBackStack();
         }
 
 
@@ -343,14 +328,11 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 GenericTypeIndicator<HashMap<String, Object>> t = new GenericTypeIndicator<HashMap<String, Object>>() {};
-               if(dataSnapshot.hasChildren()){
-                   allTokens = manipulateFirebaseOutput(dataSnapshot.getValue(t));
-                   if(allTokens.size() > 0) {
-                       makeToast("Database Read is Good. Size => " + allTokens.size());
-                   }
-               }else {
-                   makeToast("No result found!");
+                if(dataSnapshot.hasChildren()){
+                   nhsQuery = manipulateFirebaseOutput(dataSnapshot.getValue(t));
+                       //makeToast("Database Read is Good. Size => " + nhsQuery.size());
                }
+                replaceFragments(new NhsQueryFragment(), true);
 
             }
 
@@ -360,5 +342,9 @@ public class MainActivity extends AppCompatActivity
         });
 
         return null;
+    }
+
+    public ArrayList<Token> getNhsQueryArray(){
+        return nhsQuery;
     }
 }
