@@ -9,6 +9,15 @@
     >
 
 
+
+    <TextView
+        android:text="TextView"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/form_space_light"
+        android:layout_height="wrap_content"
+        android:id="@+id/nhs" />
+
     <TextView
         android:text="TextView"
         android:gravity="center"

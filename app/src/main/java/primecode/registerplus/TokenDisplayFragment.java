@@ -41,8 +41,8 @@ public class TokenDisplayFragment extends Fragment {
         View view = inflater.inflate(R.layout.token_display, container, false);
 
         mListView = (ListView) view.findViewById(R.id.list);
-        ArrayList<Token> t = fragmentButtonClick.getAllTokens();
-        mListView.setAdapter(new TokenAdapter(getContext(), t));
+        ArrayList<Token> tokens = fragmentButtonClick.getAllTokens();
+        mListView.setAdapter(new TokenAdapter(getContext(), tokens));
         return view;
     }
 }

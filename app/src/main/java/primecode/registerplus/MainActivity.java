@@ -1,5 +1,6 @@
 package primecode.registerplus;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -43,7 +44,6 @@ public class MainActivity extends AppCompatActivity
         FragmentButtonClick {
     private static final String MESSAGE = "registerPlus";
     ArrayList<Token> allTokens = new ArrayList<>();
-    ArrayList<Token> nhsQuery = new ArrayList<>();
 
     private FirebaseAuth mAuth;
     // [END declare_auth]
@@ -53,60 +53,37 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void fragmentButtonClicked(String fullName, String address, String selectedSpinner, String nhsNumber) {
-            signInAnonymously();
-            //Simple validation completed | create new Activity | populate the database
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
-            Date date = new Date();
-            String timeStamp = dateFormat.format(date);
-            Toast.makeText(this, timeStamp , Toast.LENGTH_SHORT).show();
-            //create Token object
-            Token token = new Token(fullName, address, selectedSpinner, nhsNumber, timeStamp);
-            DatabaseReference database = FirebaseDatabase.getInstance().getReference("/users/" + nhsNumber + "/");
-            database.child(timeStamp).setValue(token);
+        signInAnonymously();
+        //Simple validation completed | create new Activity | populate the database
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+        Date date = new Date();
+        String timeStamp = dateFormat.format(date);
+        //create Token object
+        Token token = new Token(fullName, address, selectedSpinner, nhsNumber, timeStamp);
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("/users/" + nhsNumber + "/");
+        database.child(timeStamp).setValue(token);
 
-            database.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    GenericTypeIndicator<HashMap<String, Object>> t = new GenericTypeIndicator<HashMap<String, Object>>() {};
-                    allTokens = manipulateFirebaseOutput(dataSnapshot.getValue(t));
-                    createMyTokenFragment();
-//                    HashMap<String, Object> s = dataSnapshot.getValue(t);
-//                        Toast.makeText(getApplicationContext(), s.keySet().toString(), Toast.LENGTH_SHORT).show();
-                }
+        database.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                GenericTypeIndicator<HashMap<String, Object>> t = new GenericTypeIndicator<HashMap<String, Object>>() {};
+                allTokens = manipulateFirebaseOutput(dataSnapshot.getValue(t));
+                createMyTokenFragment();
+            }
 
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-
-                Toast.makeText(getApplicationContext(), "dberror " + databaseError.getMessage(), Toast.LENGTH_LONG).show();
-                }
-            });
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
     }
 
     public void createMyTokenFragment(){
         TokenDisplayFragment tdf = new TokenDisplayFragment();
-        replaceFragments(tdf, false);
+        replaceFragments(tdf, true);
     }
 
     public ArrayList<Token> manipulateFirebaseOutput(HashMap<String, Object> output) {
-        Set entrySet = output.entrySet();
-
-        if(entrySet.size() > 0) {
-            ArrayList<Token> allTokens = new ArrayList<>();
-            Iterator it = entrySet.iterator();
-            while(it.hasNext()){
-                Map.Entry me = (Map.Entry) it.next();
-
-                String tokenText = me.getValue().toString();
-                //Toast.makeText(this, tokenText.toString(), Toast.LENGTH_SHORT).show();
-                String[] tokenValues = ObjectToClassConverter.filtrStringToClass(tokenText);
-                Token token = new Token(tokenValues[4], tokenValues[3],tokenValues[2],tokenValues[1],tokenValues[0]);
-                allTokens.add(token);
-            }
-
-            return allTokens;
-        }
-
-        return null;
+        return RegisterPlusSupport.manipulateFirebaseOutput(output);
     }
 
     @Override
@@ -116,8 +93,8 @@ public class MainActivity extends AppCompatActivity
 
             for(String check: array){
                 if(string.contains(check)) {
-                        Toast.makeText(this, "Name or NHS Number cannot contain character [ " + check + " ]", Toast.LENGTH_LONG).show();
-                        return false;
+                    Toast.makeText(this, "Name or NHS Number cannot contain character [ " + check + " ]", Toast.LENGTH_LONG).show();
+                    return false;
                 }
             }
 
@@ -162,11 +139,9 @@ public class MainActivity extends AppCompatActivity
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
                     // User is signed in
-                    Toast.makeText(getApplicationContext(), "onAuthStateChanged:signed_in:" + user.getUid(), Toast.LENGTH_LONG).show();
                 } else {
                     // User is signed out
                     signInAnonymously();
-                    Toast.makeText(getApplicationContext(), "onAuthStateChanged:signed_out", Toast.LENGTH_LONG).show();
                 }
                 // ...
             }
@@ -238,38 +213,12 @@ public class MainActivity extends AppCompatActivity
 
 
         } else if (id == R.id.myTokens) {
-            //start a new Activity here.
-            Fragment fragment = getSupportFragmentManager().findFragmentByTag("myTokens");
-            if(fragment != null) {
-                //Toast.makeText(this, "This is not ABOUT US", Toast.LENGTH_SHORT).show();
-                //getSupportFragmentManager().beginTransaction().add(fragment, "myTokens").commit();
-                replaceFragments(fragment, false);
-            }else {
-                boolean addToBackStack = false;
-                //create new aboutUs Fragment
-                Fragment myToken = new MyTokensFragment();
-                if(getSupportFragmentManager().findFragmentById(R.id.fragment_container1) instanceof RegistrationFragment) {
-                    addToBackStack = true;
-                }
-                replaceFragments(myToken, addToBackStack);
-            }
+            Intent intent = new Intent(this, MyTokensActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.aboutUs) {
-            boolean addToBackStack = false;
-            Fragment fragment = getSupportFragmentManager().findFragmentByTag("aboutUs");
-            if(fragment != null) {
-                //Toast.makeText(this, "This is not ABOUT US", Toast.LENGTH_SHORT).show();
-                //getSupportFragmentManager().beginTransaction().add(fragment, "aboutUs").commit();
-                replaceFragments(fragment, addToBackStack);
-            }else {
-                //create new aboutUs Fragment
-                Fragment aboutUs = new AboutUsFragment();
-                //create new aboutUs Fragment
-                if(getSupportFragmentManager().findFragmentById(R.id.fragment_container1) instanceof RegistrationFragment) {
-                    addToBackStack = true;
-                }
-                replaceFragments(aboutUs, addToBackStack);
-            }
+            Intent intent = new Intent(this, AboutUsActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -285,10 +234,8 @@ public class MainActivity extends AppCompatActivity
         if(addToBackStack) {
             ft.addToBackStack(fragment.getTag());
         }else {
-            getSupportFragmentManager().popBackStack();
+            //getSupportFragmentManager().popBackStack();
         }
-
-
         ft.commit();
     }
 
@@ -303,8 +250,6 @@ public class MainActivity extends AppCompatActivity
                         // signed in user can be handled in the listener.
                         if (!task.isSuccessful()) {
                             //Log.w(TAG, "signInAnonymously", task.getException());
-                            Toast.makeText(getApplicationContext(), "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -319,32 +264,10 @@ public class MainActivity extends AppCompatActivity
         return allTokens;
     }
 
+
+
     @Override
-    public HashMap<String, Object> queryNhsNumber(String nhsNumber) {
-
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("/users/" + nhsNumber + "/");
-
-        database.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                GenericTypeIndicator<HashMap<String, Object>> t = new GenericTypeIndicator<HashMap<String, Object>>() {};
-                if(dataSnapshot.hasChildren()){
-                   nhsQuery = manipulateFirebaseOutput(dataSnapshot.getValue(t));
-                       //makeToast("Database Read is Good. Size => " + nhsQuery.size());
-               }
-                replaceFragments(new NhsQueryFragment(), true);
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-            }
-        });
-
-        return null;
-    }
-
-    public ArrayList<Token> getNhsQueryArray(){
-        return nhsQuery;
-    }
+    public ArrayList<Token> getNhsQueryArray() {return null;}
+    @Override
+    public HashMap<String, Object> queryNhsNumber(String nhsNumber) {return null;}
 }

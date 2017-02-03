@@ -26,6 +26,7 @@ public class MyTokensFragment extends Fragment {
         super();
     }
 
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -61,12 +62,15 @@ public class MyTokensFragment extends Fragment {
                 if(fragmentButtonClick.validateFirebaseDbInput(nhsNumber.getText().toString().trim())) {
                     TextView textView = (TextView) view.findViewById(R.id.text_nhs_query);
                     textView.setVisibility(View.INVISIBLE);
+
+                    String nhs = nhsNumber.getText().toString().trim();
+                    nhsNumber.setText("");
                     nhsNumber.setVisibility(View.INVISIBLE);
                     button.setVisibility(View.INVISIBLE);
 
                     ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.progressBar_myTokenFragment);
                     progressBar.setVisibility(View.VISIBLE);
-                    fragmentButtonClick.queryNhsNumber(nhsNumber.getText().toString().trim());
+                    fragmentButtonClick.queryNhsNumber(nhs);
 
                 }
                 else if(nhsNumber.getText().toString().length() < 1) {

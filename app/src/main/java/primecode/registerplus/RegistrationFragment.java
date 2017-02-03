@@ -115,6 +115,12 @@ public class RegistrationFragment extends Fragment {
             Toast.makeText(getContext(), "Please Complete the Form.", Toast.LENGTH_SHORT).show();
         }
         else {
+
+            editAddress.setText("");
+            editFullName.setText("");
+            editNhs.setText("");
+            spinner.setSelection(0);
+
             editFullName.setVisibility(View.GONE);
             editAddress.setVisibility(View.GONE);
             spinner.setVisibility(View.GONE);

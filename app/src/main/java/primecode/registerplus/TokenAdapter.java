@@ -60,11 +60,13 @@ public class TokenAdapter extends BaseAdapter {
             v = convertView;
         }
 
+        TextView nhs = (TextView) v.findViewById(R.id.nhs);
         TextView fullName = (TextView) v.findViewById(R.id.fullName);
         TextView address = (TextView) v.findViewById(R.id.address);
         TextView timestamp = (TextView) v.findViewById(R.id.timestamp);
         TextView inquiry = (TextView) v.findViewById(R.id.inquiry);
 
+        nhs.setText(allTokens.get(position).getNhsNumber());
         fullName.setText(allTokens.get(position).getFullname());
         address.setText(allTokens.get(position).getAddress());
         timestamp.setText(allTokens.get(position).getDate());
