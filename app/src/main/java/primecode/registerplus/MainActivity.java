@@ -54,14 +54,14 @@ public class MainActivity extends AppCompatActivity
 
 
     @Override
-    public void fragmentButtonClicked(String fullName, String address, String selectedSpinner, String nhsNumber) {
+    public void fragmentButtonClicked(String nhsNumber, String fullName, String address, String selectedSpinner) {
         signInAnonymously();
         //Simple validation completed | create new Activity | populate the database
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
         Date date = new Date();
         String timeStamp = dateFormat.format(date);
         //create Token object
-        Token token = new Token(fullName, address, selectedSpinner, nhsNumber, timeStamp);
+        Token token = new Token(nhsNumber, fullName, address, selectedSpinner, timeStamp);
         DatabaseReference database = FirebaseDatabase.getInstance().getReference("/users/" + nhsNumber + "/");
         database.child(timeStamp).setValue(token);
 

@@ -70,6 +70,9 @@ public class MyTokensFragment extends Fragment {
 
                     ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.progressBar_myTokenFragment);
                     progressBar.setVisibility(View.VISIBLE);
+                    ProgressBarAnimation anim = new ProgressBarAnimation(progressBar, 0, 100);
+                    anim.setDuration(1000);
+                    progressBar.startAnimation(anim);
                     fragmentButtonClick.queryNhsNumber(nhs);
 
                 }

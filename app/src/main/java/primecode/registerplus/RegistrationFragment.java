@@ -56,7 +56,7 @@ public class RegistrationFragment extends Fragment {
             public void onClick(View v) {
                 if(validateForm()) {
                     setProgressBar();
-                    fragmentButtonClick.fragmentButtonClicked(fullName, address, selectedSpinner, nhsNumber);
+                    fragmentButtonClick.fragmentButtonClicked(nhsNumber, fullName,address,selectedSpinner);
                 }
             }
         });
@@ -77,10 +77,12 @@ public class RegistrationFragment extends Fragment {
     }
 
     public void setProgressBar(){
-        ProgressBar pbar = (ProgressBar) view.findViewById(R.id.progressBar2);
-        pbar.setVisibility(View.VISIBLE);
-        pbar.setProgress(0);
-        pbar.incrementProgressBy(100);
+        ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.progressBar2);
+        progressBar.setVisibility(View.VISIBLE);
+
+        ProgressBarAnimation anim = new ProgressBarAnimation(progressBar, 0, 100);
+        anim.setDuration(1000);
+        progressBar.startAnimation(anim);
 
         TextView tfullName = (TextView) view.findViewById(R.id.reg_name);
         TextView tnhs = (TextView) view.findViewById(R.id.reg_nhsNumber);

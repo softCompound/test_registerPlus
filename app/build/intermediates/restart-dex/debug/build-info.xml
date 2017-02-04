@@ -5,7 +5,7 @@
     density="xxhdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="270617558636989"
+    timestamp="306928648089501"
     token="8979655345383165101"
     verifier="FULL_BUILD_REQUESTED" >
 
@@ -27,7 +27,7 @@
         type="MAIN" />
 
     <build
-        timestamp="270617558636989"
+        timestamp="306928648089501"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/outputs/apk/app-debug.apk"

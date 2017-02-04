@@ -51,25 +51,30 @@ public final class RegisterPlusSupport {
     }
 
     static ArrayList<Token> manipulateFirebaseOutput(HashMap<String, Object> output) {
-        Set entrySet = output.entrySet();
 
-        if(entrySet.size() > 0) {
-            ArrayList<Token> allTokens = new ArrayList<>();
+        ArrayList<Token> allTokens = new ArrayList<>();
+
+        try{
+            Set entrySet = output.entrySet();
+
             Iterator it = entrySet.iterator();
             while(it.hasNext()){
                 Map.Entry me = (Map.Entry) it.next();
 
                 String tokenText = me.getValue().toString();
                 String[] tokenValues = filtrStringToClass(tokenText);
-                Token token = new Token(tokenValues[0], tokenValues[1],tokenValues[4],tokenValues[2],tokenValues[3]);
+                Token token = new Token(tokenValues[1], tokenValues[4],tokenValues[2],tokenValues[0],tokenValues[3]);
                 System.out.print("4 = " + tokenValues[4] + "3 = " + tokenValues[3] + "2 = " + tokenValues[2] + "1 = " + tokenValues[1]+ "0 = " + tokenValues[0]);
                 allTokens.add(token);
             }
+        }catch(NullPointerException e){
 
-            return allTokens;
         }
 
-        return null;
+
+        return allTokens;
+
+
     }
 }
 
