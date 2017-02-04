@@ -2,6 +2,15 @@
 <items version="2" >
 
     <item
+        is-multidex="false"
+        jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/pre-dexed/release/com.android.support-support-v4-24.2.1_aeaaf4b4157bf8c0e9177388afee89f297acaf7c.jar" />
+    </item>
+    <item
         is-multidex="true"
         jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.2.1/jars/classes.jar"
         jumboMode="true"
@@ -47,6 +56,15 @@
         <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-crash-10.0.1_9e532eb06ea2054f7ed4fad6da22fdb85aa8edd5/classes.dex" />
     </item>
     <item
+        is-multidex="false"
+        jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="8010ae6ed32828a145b25ec97bc07b7a83c6318f">
+        <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/pre-dexed/release/com.google.firebase-firebase-database-connection-10.0.1_caf8823183fbf0597f4ad55a530c1d5ef05732a8.jar" />
+    </item>
+    <item
         is-multidex="true"
         jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/10.0.1/jars/classes.jar"
         jumboMode="true"
@@ -65,6 +83,15 @@
         <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_5d54dbc0e7a5ea1918193410279e11c890329d38/classes.dex" />
     </item>
     <item
+        is-multidex="false"
+        jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/pre-dexed/release/com.google.android.gms-play-services-tasks-10.0.1_6eb486d475995293027fa3e8851b65aa70793b70.jar" />
+    </item>
+    <item
         is-multidex="true"
         jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/10.0.1/jars/classes.jar"
         jumboMode="true"
@@ -72,6 +99,24 @@
         revision="24.0.0"
         sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
         <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-10.0.1_7266203cf7a463661c2956ec885d5958b41c28ff/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/pre-dexed/release/internal_impl-24.2.1_8db621ce2aa1c4eec6912c85ac8e44234a0f268a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/pre-dexed/release/com.android.support-support-fragment-24.2.1_705dff7e4acafbdfbbc19ab0f94f76db9a70cce3.jar" />
     </item>
     <item
         is-multidex="true"
@@ -83,6 +128,51 @@
         <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-10.0.1_ffa5aee204469d6546163073459959ddf9f72c26/classes.dex" />
     </item>
     <item
+        is-multidex="false"
+        jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/pre-dexed/release/com.android.support-support-core-ui-24.2.1_3ed2b8cef44d8d52d6edfcdee319defcf93a18ed.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/pre-dexed/release/com.google.firebase-firebase-iid-10.0.1_ad6f499f830482aafb3b20f909483f8a16a9202f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/pre-dexed/release/com.android.support-support-core-utils-24.2.1_0a8c5c6069ea53452285ac12930de376f7ad6261.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/pre-dexed/release/internal_impl-24.2.1_285405ba4ae330445b3ac1f4bf90853ed5bb8ee1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
+        <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/pre-dexed/release/com.google.android.gms-play-services-base-10.0.1_612845fc96ac5ac6ad5c3ec5d62f5cba9204765d.jar" />
+    </item>
+    <item
         is-multidex="true"
         jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/10.0.1/jars/classes.jar"
         jumboMode="true"
@@ -90,6 +180,15 @@
         revision="24.0.0"
         sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
         <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-10.0.1_ad6ecd450a59666177987faf810475aa5435b52c/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/pre-dexed/release/internal_impl-24.2.1_5b9bdc149274bcbdbc30ca757c20f2adc5b47964.jar" />
     </item>
     <item
         is-multidex="true"
@@ -110,6 +209,15 @@
         <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-24.2.1_16194ae67a5ac2c69890d2b49093ef10fc93ff22/classes.dex" />
     </item>
     <item
+        is-multidex="false"
+        jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/pre-dexed/release/internal_impl-24.2.1_2ae0ba13e2a72e8325cce91dcc0d3108a7940f4f.jar" />
+    </item>
+    <item
         is-multidex="true"
         jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
         jumboMode="true"
@@ -117,6 +225,24 @@
         revision="24.0.0"
         sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
         <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_26dbb827a8185aa2f546b3c20bdead608fe211f3/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/pre-dexed/release/com.android.support-animated-vector-drawable-24.2.1_956260dfea0cab9ad82d00b2e7aa9d78e1ff0b5f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/pre-dexed/release/com.android.support-support-compat-24.2.1_13011b89d622cdb068ea0fb7592f0d22b52501c2.jar" />
     </item>
     <item
         is-multidex="true"
@@ -137,6 +263,60 @@
         <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_0af6a3f78577c8e373d0ba66233260e4e91bc5a5/classes.dex" />
     </item>
     <item
+        is-multidex="false"
+        jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/pre-dexed/release/com.android.support-support-media-compat-24.2.1_f1ad6ca8f3e5b76d76a6179d52343042d9505b6b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
+        <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/pre-dexed/release/com.google.firebase-firebase-analytics-10.0.1_e4669c179b4d9ea7163ddfbdb5b056ef66a2a9a8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/pre-dexed/release/com.android.support-support-vector-drawable-24.2.1_516aefca02ec8762009892af835db139cbd2bce5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/pre-dexed/release/com.android.support-recyclerview-v7-24.2.1_73c39b850be3b5c9be28c4d8d3dd2d27512cce81.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.google.firebase/firebase-crash/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="de29a39f9260f88151b1ef453140e71c76b6c415">
+        <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/pre-dexed/release/com.google.firebase-firebase-crash-10.0.1_9e532eb06ea2054f7ed4fad6da22fdb85aa8edd5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/pre-dexed/release/com.google.firebase-firebase-analytics-impl-10.0.1_81d3057595d4497bdf508f9d99ac9b51ebe97a33.jar" />
+    </item>
+    <item
         is-multidex="true"
         jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
         jumboMode="true"
@@ -155,6 +335,15 @@
         <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-connection-10.0.1_caf8823183fbf0597f4ad55a530c1d5ef05732a8/classes.dex" />
     </item>
     <item
+        is-multidex="false"
+        jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/pre-dexed/release/com.google.android.gms-play-services-basement-10.0.1_7266203cf7a463661c2956ec885d5958b41c28ff.jar" />
+    </item>
+    <item
         is-multidex="true"
         jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/10.0.1/jars/classes.jar"
         jumboMode="true"
@@ -171,6 +360,15 @@
         revision="24.0.0"
         sha1="867dad63c33388ff8c7644b236579355036d075f">
         <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_8db621ce2aa1c4eec6912c85ac8e44234a0f268a/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/pre-dexed/release/com.android.support-appcompat-v7-24.2.1_5d54dbc0e7a5ea1918193410279e11c890329d38.jar" />
     </item>
     <item
         is-multidex="true"
@@ -200,6 +398,15 @@
         <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_3ed2b8cef44d8d52d6edfcdee319defcf93a18ed/classes.dex" />
     </item>
     <item
+        is-multidex="false"
+        jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="8f128aeeb7e31271b28a7adb9dac1f3a6ed9f5e7">
+        <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/pre-dexed/release/com.google.firebase-firebase-database-10.0.1_ffa5aee204469d6546163073459959ddf9f72c26.jar" />
+    </item>
+    <item
         is-multidex="true"
         jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
         jumboMode="true"
@@ -218,6 +425,15 @@
         <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-10.0.1_612845fc96ac5ac6ad5c3ec5d62f5cba9204765d/classes.dex" />
     </item>
     <item
+        is-multidex="false"
+        jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/pre-dexed/release/com.google.firebase-firebase-common-10.0.1_ad6ecd450a59666177987faf810475aa5435b52c.jar" />
+    </item>
+    <item
         is-multidex="true"
         jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
         jumboMode="true"
@@ -225,6 +441,15 @@
         revision="24.0.0"
         sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
         <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_285405ba4ae330445b3ac1f4bf90853ed5bb8ee1/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/pre-dexed/release/com.android.support-design-24.2.1_16194ae67a5ac2c69890d2b49093ef10fc93ff22.jar" />
     </item>
     <item
         is-multidex="true"
@@ -245,6 +470,24 @@
         <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_13011b89d622cdb068ea0fb7592f0d22b52501c2/classes.dex" />
     </item>
     <item
+        is-multidex="false"
+        jar="/Users/nagendralimbu/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/pre-dexed/release/support-annotations-24.2.1_40b5bd38f56aafb614fb68fc2d8279e6d163519d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/pre-dexed/release/internal_impl-24.2.1_26dbb827a8185aa2f546b3c20bdead608fe211f3.jar" />
+    </item>
+    <item
         is-multidex="true"
         jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
         jumboMode="true"
@@ -252,6 +495,15 @@
         revision="24.0.0"
         sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
         <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_2ae0ba13e2a72e8325cce91dcc0d3108a7940f4f/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/10.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="9cca2818594cc5348806d6662133491e7ea0fa8d">
+        <dex dex="/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/pre-dexed/release/com.google.firebase-firebase-auth-10.0.1_e8a18a882f38ee330dd8ecd290e37effc0ea21c8.jar" />
     </item>
     <item
         is-multidex="true"

@@ -64,12 +64,12 @@
         "source": "/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_spinner_textfield_background_material.xml"
     },
     {
-        "merged": "/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_light.xml",
-        "source": "/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.0.1/res/drawable/common_google_signin_btn_text_light.xml"
-    },
-    {
         "merged": "/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/res/merged/debug/drawable/abc_vector_test.xml",
         "source": "/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_vector_test.xml"
+    },
+    {
+        "merged": "/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_light.xml",
+        "source": "/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.0.1/res/drawable/common_google_signin_btn_text_light.xml"
     },
     {
         "merged": "/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_small_material.xml",
@@ -82,10 +82,6 @@
     {
         "merged": "/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/res/merged/debug/drawable/navigation_empty_icon.xml",
         "source": "/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/res/drawable/navigation_empty_icon.xml"
-    },
-    {
-        "merged": "/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/res/merged/debug/drawable/progressbar.xml",
-        "source": "/Users/nagendralimbu/Desktop/test_registerPlus/app/src/main/res/drawable/progressbar.xml"
     },
     {
         "merged": "/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_dark.xml",

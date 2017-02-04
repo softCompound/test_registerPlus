@@ -13,6 +13,13 @@
         android:text="@string/query_nhs"
         android:gravity="center"/>
 
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar_myTokenFragment"
+        android:visibility="gone" />
+
     <EditText
         android:id="@+id/edit_nhsQuery"
         android:layout_width="match_parent"
@@ -34,12 +41,5 @@
         android:layout_height="wrap_content"
         android:background="@drawable/button_details"
         android:layout_marginTop="@dimen/form_space_heavy" />
-
-    <ProgressBar
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/progressBar_myTokenFragment"
-        android:visibility="invisible" />
 
 </LinearLayout>
