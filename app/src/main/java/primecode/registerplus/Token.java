@@ -11,7 +11,7 @@ public class Token {
 
     private String fullname, address, inquiryNature, nhsNumber, date;
 
-    public Token(String fullname, String date, String address, String nhsNumber, String inquiryNature) {
+    public Token(String nhsNumber, String fullname, String address, String inquiryNature, String date) {
         this.fullname = fullname;
         this.address = address;
         this.inquiryNature = inquiryNature;

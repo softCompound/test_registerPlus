@@ -1,6 +1,6 @@
 package primecode.registerplus;
 
-import android.widget.Toast;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -60,9 +60,9 @@ public final class RegisterPlusSupport {
                 Map.Entry me = (Map.Entry) it.next();
 
                 String tokenText = me.getValue().toString();
-                //Toast.makeText(this, tokenText.toString(), Toast.LENGTH_SHORT).show();
                 String[] tokenValues = filtrStringToClass(tokenText);
-                Token token = new Token(tokenValues[4], tokenValues[3],tokenValues[2],tokenValues[1],tokenValues[0]);
+                Token token = new Token(tokenValues[0], tokenValues[1],tokenValues[4],tokenValues[2],tokenValues[3]);
+                System.out.print("4 = " + tokenValues[4] + "3 = " + tokenValues[3] + "2 = " + tokenValues[2] + "1 = " + tokenValues[1]+ "0 = " + tokenValues[0]);
                 allTokens.add(token);
             }
 

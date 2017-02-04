@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:opacity="opaque">
+    <!--opacity attribute removes the black screen at startup
+    Layer-list places items with the biggest index on top-->
+
+    <item
+        android:drawable="@color/colorGreen"/>
+
+    <item>
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/appico_revised"/>
+    </item>
+
+</layer-list>

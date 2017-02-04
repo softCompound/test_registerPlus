@@ -3,52 +3,114 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/form_space_light"
-    android:padding="5dp"
-    android:gravity="center"
+    android:padding="@dimen/form_space_light"
     android:background="@drawable/side_nav_bar"
     >
 
-
-
-    <TextView
-        android:text="TextView"
-        android:gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_marginTop="@dimen/form_space_light"
+    <RelativeLayout
         android:layout_height="wrap_content"
-        android:id="@+id/nhs" />
+        android:layout_width="wrap_content">
+        <TextView
+            android:textSize="18sp"
+            android:textColor="@color/colorWhite"
+            android:text="Nhs Number : "
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/nhs_label" />
 
-    <TextView
-        android:text="TextView"
-        android:gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_marginTop="@dimen/form_space_light"
-        android:layout_height="wrap_content"
-        android:id="@+id/fullName" />
+        <TextView
+            android:gravity="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"
+            android:layout_toRightOf="@id/nhs_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/nhs" />
+    </RelativeLayout>
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
+    <RelativeLayout
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/form_space_light"
-        android:gravity="center"
-        android:id="@+id/timestamp" />
+        android:layout_width="wrap_content">
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:gravity="center"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/form_space_light"
-        android:id="@+id/address" />
+        <TextView
+            android:text="FullName : "
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/form_space_light"
+            android:layout_height="wrap_content"
+            android:id="@+id/fullName_label" />
+        <TextView
+            android:text="FullName"
+            android:gravity="center"
+            android:layout_toRightOf="@id/fullName_label"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/form_space_light"
+            android:layout_height="wrap_content"
+            android:id="@+id/fullName" />
+    </RelativeLayout>
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
+
+    <RelativeLayout
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/form_space_light"
-        android:gravity="center"
-        android:id="@+id/inquiry"
-        android:layout_marginBottom="@dimen/form_space_medium"/>
+        android:layout_width="wrap_content">
+        <TextView
+            android:text="Address : "
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/form_space_light"
+            android:id="@+id/address_label" />
+        <TextView
+            android:text="Address : "
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@id/address_label"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/form_space_light"
+            android:id="@+id/address" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content">
+        <TextView
+            android:text="Nature of Inquiry : "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/form_space_light"
+            android:gravity="center"
+            android:id="@+id/inquiry_label" />
+        <TextView
+            android:text="Nature of Inquiry : "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/inquiry_label"
+            android:layout_marginTop="@dimen/form_space_light"
+            android:gravity="center"
+            android:id="@+id/inquiry" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content">
+        <TextView
+            android:text="Time : "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/form_space_light"
+            android:gravity="center"
+            android:id="@+id/timestamp_label" />
+        <TextView
+            android:text="Time : "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/timestamp_label"
+            android:layout_marginTop="@dimen/form_space_light"
+            android:gravity="center"
+            android:id="@+id/timestamp" />
+    </RelativeLayout>
+
 
 </LinearLayout>

@@ -79,6 +79,8 @@ public class RegistrationFragment extends Fragment {
     public void setProgressBar(){
         ProgressBar pbar = (ProgressBar) view.findViewById(R.id.progressBar2);
         pbar.setVisibility(View.VISIBLE);
+        pbar.setProgress(0);
+        pbar.incrementProgressBy(100);
 
         TextView tfullName = (TextView) view.findViewById(R.id.reg_name);
         TextView tnhs = (TextView) view.findViewById(R.id.reg_nhsNumber);

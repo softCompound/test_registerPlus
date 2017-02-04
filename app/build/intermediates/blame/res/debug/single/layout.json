@@ -40,10 +40,6 @@
         "source": "/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_popup_menu_item_layout.xml"
     },
     {
-        "merged": "/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/res/merged/debug/layout/page_loader.xml",
-        "source": "/Users/nagendralimbu/Desktop/test_registerPlus/app/src/main/res/layout/page_loader.xml"
-    },
-    {
         "merged": "/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_icon.xml",
         "source": "/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_list_menu_item_icon.xml"
     },

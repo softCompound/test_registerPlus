@@ -10,6 +10,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -29,20 +30,20 @@ import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 
 
+import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Locale;
-import java.util.Map;
-import java.util.Set;
+
 
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
         FragmentButtonClick {
-    private static final String MESSAGE = "registerPlus";
+    private boolean onSaveInstanceState = false;
+
     ArrayList<Token> allTokens = new ArrayList<>();
 
     private FirebaseAuth mAuth;
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity
 
     // [START declare_auth_listener]
     private FirebaseAuth.AuthStateListener mAuthListener;
+
 
     @Override
     public void fragmentButtonClicked(String fullName, String address, String selectedSpinner, String nhsNumber) {
@@ -68,7 +70,7 @@ public class MainActivity extends AppCompatActivity
             public void onDataChange(DataSnapshot dataSnapshot) {
                 GenericTypeIndicator<HashMap<String, Object>> t = new GenericTypeIndicator<HashMap<String, Object>>() {};
                 allTokens = manipulateFirebaseOutput(dataSnapshot.getValue(t));
-                createMyTokenFragment();
+                replaceFragments(new TokenDisplayFragment(), true);
             }
 
             @Override
@@ -77,9 +79,19 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
-    public void createMyTokenFragment(){
-        TokenDisplayFragment tdf = new TokenDisplayFragment();
-        replaceFragments(tdf, true);
+    public void replaceFragments(Fragment fragment, boolean addToBackStack) {
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.fragment_container1, fragment)
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+
+        if(addToBackStack) {
+            ft.addToBackStack(fragment.getTag());
+        }
+        if(!this.onSaveInstanceState) ft.commit();
+
+        getSupportFragmentManager().dump("FragmentManagerDump == ", null,
+                new PrintWriter(System.out, true), null);
+
     }
 
     public ArrayList<Token> manipulateFirebaseOutput(HashMap<String, Object> output) {
@@ -160,6 +172,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     protected void onStop() {
+        Log.e("On Stop boolState= " , ""+onSaveInstanceState);
         super.onStop();
         if (mAuthListener != null) {
             mAuth.removeAuthStateListener(mAuthListener);
@@ -168,10 +181,31 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     protected void onStart() {
+        Log.e("On start boolState= " , ""+onSaveInstanceState);
+
         super.onStart();
+        onSaveInstanceState = false;
         mAuth.addAuthStateListener(mAuthListener);
     }
 
+    @Override
+    protected void onPause() {
+        onSaveInstanceState = true;
+        Log.e("onPause boolState= " , ""+onSaveInstanceState);
+        super.onPostResume();
+    }
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        Log.e("OnsaveInstanceCalled= " , ""+onSaveInstanceState);
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestart() {
+        Log.e("onrestart bool= " , ""+onSaveInstanceState);
+        onSaveInstanceState = false;
+        super.onRestart();
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -201,18 +235,7 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.home) {
-            Fragment fragment = getSupportFragmentManager().findFragmentByTag("home");
-            if(fragment != null) {
-                //String s = fragment.getClass().getName();
-                //Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
-                replaceFragments(fragment, false);
-            } else {
-                replaceFragments(new RegistrationFragment(), false);
-            }
-
-
-        } else if (id == R.id.myTokens) {
+        if (id == R.id.myTokens) {
             Intent intent = new Intent(this, MyTokensActivity.class);
             startActivity(intent);
 
@@ -224,19 +247,6 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    public void replaceFragments(Fragment fragment, boolean addToBackStack) {
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.fragment_container1, fragment)
-                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-
-        if(addToBackStack) {
-            ft.addToBackStack(fragment.getTag());
-        }else {
-            //getSupportFragmentManager().popBackStack();
-        }
-        ft.commit();
     }
 
     private void signInAnonymously() {

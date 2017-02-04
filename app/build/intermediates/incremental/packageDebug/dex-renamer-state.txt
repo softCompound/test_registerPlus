@@ -1,4 +1,4 @@
-#Fri Feb 03 14:00:06 GMT 2017
+#Sat Feb 04 12:20:44 GMT 2017
 base.0=/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_0af6a3f78577c8e373d0ba66233260e4e91bc5a5
 renamed.1=classes2.dex
 renamed.0=classes.dex

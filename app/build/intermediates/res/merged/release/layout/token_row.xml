@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/form_space_light"
+    android:padding="@dimen/form_space_light"
+    android:background="@drawable/side_nav_bar"
+    >
+
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content">
+        <TextView
+            android:text="Nhs Number : "
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/nhs_label" />
+
+        <TextView
+            android:text="Nhs Number : "
+            android:gravity="center"
+            android:layout_toRightOf="@id/nhs_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/nhs" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content">
+
+        <TextView
+            android:text="FullName : "
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/form_space_light"
+            android:layout_height="wrap_content"
+            android:id="@+id/fullName_label" />
+        <TextView
+            android:text="FullName"
+            android:gravity="center"
+            android:layout_toRightOf="@id/fullName_label"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/form_space_light"
+            android:layout_height="wrap_content"
+            android:id="@+id/fullName" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content">
+        <TextView
+            android:text="Address : "
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/form_space_light"
+            android:id="@+id/address_label" />
+        <TextView
+            android:text="Address : "
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@id/address_label"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/form_space_light"
+            android:id="@+id/address" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content">
+        <TextView
+            android:text="Nature of Inquiry : "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/form_space_light"
+            android:gravity="center"
+            android:id="@+id/inquiry_label" />
+        <TextView
+            android:text="Nature of Inquiry : "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/inquiry_label"
+            android:layout_marginTop="@dimen/form_space_light"
+            android:gravity="center"
+            android:id="@+id/inquiry" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content">
+        <TextView
+            android:text="Time : "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/form_space_light"
+            android:gravity="center"
+            android:id="@+id/timestamp_label" />
+        <TextView
+            android:text="Time : "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/timestamp_label"
+            android:layout_marginTop="@dimen/form_space_light"
+            android:gravity="center"
+            android:id="@+id/timestamp" />
+    </RelativeLayout>
+
+
+</LinearLayout>

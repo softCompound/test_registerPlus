@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -16,7 +17,7 @@ import java.util.ArrayList;
  */
 
 public class TokenAdapter extends BaseAdapter {
-//    private FragmentButtonClick fragmentButtonClick;
+    private FragmentButtonClick fragmentButtonClick;
 
     private  ArrayList<Token> allTokens;
     private LayoutInflater mLayoutInflater;
@@ -26,13 +27,13 @@ public class TokenAdapter extends BaseAdapter {
         this.ctx = context;
         this.allTokens = allTokens;
         mLayoutInflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//
-//         try {
-//             fragmentButtonClick = (FragmentButtonClick) context;
-//         } catch (ClassCastException e) {
-//             throw new ClassCastException(context.toString()
-//                     + " must implement FragmentButtonClick Interface");
-//         }
+
+         try {
+             fragmentButtonClick = (FragmentButtonClick) context;
+         } catch (ClassCastException e) {
+             throw new ClassCastException(context.toString()
+                     + " must implement FragmentButtonClick Interface");
+         }
      }
 
     @Override
