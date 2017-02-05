@@ -2,6 +2,7 @@ package primecode.registerplus;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -20,6 +21,7 @@ import android.widget.Toast;
 public class MyTokensFragment extends Fragment {
     private View view;
     private FragmentButtonClick fragmentButtonClick;
+    String nhs;
 
 
     public MyTokensFragment() {
@@ -63,7 +65,7 @@ public class MyTokensFragment extends Fragment {
                     TextView textView = (TextView) view.findViewById(R.id.text_nhs_query);
                     textView.setVisibility(View.INVISIBLE);
 
-                    String nhs = nhsNumber.getText().toString().trim();
+                    nhs = nhsNumber.getText().toString().trim();
                     nhsNumber.setText("");
                     nhsNumber.setVisibility(View.INVISIBLE);
                     button.setVisibility(View.INVISIBLE);
@@ -73,7 +75,15 @@ public class MyTokensFragment extends Fragment {
                     ProgressBarAnimation anim = new ProgressBarAnimation(progressBar, 0, 100);
                     anim.setDuration(1000);
                     progressBar.startAnimation(anim);
-                    fragmentButtonClick.queryNhsNumber(nhs);
+
+                    final Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            fragmentButtonClick.queryNhsNumber(nhs);
+                            //Do something after 100ms
+                        }
+                    }, 800);
 
                 }
                 else if(nhsNumber.getText().toString().length() < 1) {

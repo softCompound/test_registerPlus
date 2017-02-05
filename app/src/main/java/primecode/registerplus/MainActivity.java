@@ -3,6 +3,7 @@ package primecode.registerplus;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -80,14 +81,17 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void replaceFragments(Fragment fragment, boolean addToBackStack) {
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        FragmentManager manager = getSupportFragmentManager();
+        //manager.executePendingTransactions();
+        FragmentTransaction ft = manager.beginTransaction();
         ft.replace(R.id.fragment_container1, fragment)
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
 
         if(addToBackStack) {
+            manager.popBackStack();
             ft.addToBackStack(fragment.getTag());
         }
-        if(!this.onSaveInstanceState) ft.commit();
+        ft.commit();
 
         getSupportFragmentManager().dump("FragmentManagerDump == ", null,
                 new PrintWriter(System.out, true), null);
