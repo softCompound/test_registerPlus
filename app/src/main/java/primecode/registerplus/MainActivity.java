@@ -23,6 +23,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.crash.FirebaseCrash;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -82,7 +83,6 @@ public class MainActivity extends AppCompatActivity
 
     public void replaceFragments(Fragment fragment, boolean addToBackStack) {
         FragmentManager manager = getSupportFragmentManager();
-        //manager.executePendingTransactions();
         FragmentTransaction ft = manager.beginTransaction();
         ft.replace(R.id.fragment_container1, fragment)
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
@@ -91,11 +91,11 @@ public class MainActivity extends AppCompatActivity
             manager.popBackStack();
             ft.addToBackStack(fragment.getTag());
         }
-        ft.commit();
-
-        getSupportFragmentManager().dump("FragmentManagerDump == ", null,
-                new PrintWriter(System.out, true), null);
-
+        try{
+            ft.commit();
+        }catch (IllegalStateException e) {
+            FirebaseCrash.log("Exception Caught at ft.commit():" + e.getMessage());
+        }
     }
 
     public ArrayList<Token> manipulateFirebaseOutput(HashMap<String, Object> output) {

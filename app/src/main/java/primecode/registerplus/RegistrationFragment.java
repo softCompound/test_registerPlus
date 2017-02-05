@@ -2,6 +2,7 @@ package primecode.registerplus;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -56,7 +57,14 @@ public class RegistrationFragment extends Fragment {
             public void onClick(View v) {
                 if(validateForm()) {
                     setProgressBar();
-                    fragmentButtonClick.fragmentButtonClicked(nhsNumber, fullName,address,selectedSpinner);
+                    final Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            fragmentButtonClick.fragmentButtonClicked(nhsNumber, fullName,address,selectedSpinner);
+                            //Do something after 100ms
+                        }
+                    }, 800);
                 }
             }
         });
