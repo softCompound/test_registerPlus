@@ -91,8 +91,9 @@ public class MainActivity extends AppCompatActivity
             manager.popBackStack();
             ft.addToBackStack(fragment.getTag());
         }
+
         try{
-            ft.commit();
+            ft.commitAllowingStateLoss();
         }catch (IllegalStateException e) {
             FirebaseCrash.log("Exception Caught at ft.commit():" + e.getMessage());
         }
