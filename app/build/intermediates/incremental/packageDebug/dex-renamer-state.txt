@@ -1,0 +1,7 @@
+#Mon Feb 06 22:47:56 GMT 2017
+base.0=/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_0af6a3f78577c8e373d0ba66233260e4e91bc5a5
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_4bc5bda0358b1ee8a832a7409daf28ddea756ea7/classes.dex
+base.1=/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_4bc5bda0358b1ee8a832a7409daf28ddea756ea7
+file.0=/Users/nagendralimbu/Desktop/test_registerPlus/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_0af6a3f78577c8e373d0ba66233260e4e91bc5a5/classes.dex
